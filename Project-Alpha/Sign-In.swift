@@ -34,22 +34,22 @@ class Sign_In: UIViewController {
     
     // select "Login" button to verify account info in datastore
     @IBAction func btnlogin(_ sender: Any) {
-        if lblusername.text!.isEmpty || lblpw.text!.isEmpty {
-            lblmsg.text = "Username/pw is empty, try again"
+        if lblusername.text! == " " || lblpw.text! == " " {
+            lblmsg.text = "One or more credentials is missing, please try again"
         }
         
         if DataStore.shared.usernameExist(username: lblusername.text!){
            let userindex = DataStore.shared.usernameIndex(username: lblusername.text!)
            let person = DataStore.shared.getPerson(index: userindex)
            if person.pw == lblpw.text!{
-                lblmsg.text = "log in successfully"
+                lblmsg.text = "Login successful"
            }
            else if person.pw != lblmsg.text!{
-                lblmsg.text = "Username/pw wrong, try again"
+                lblmsg.text = "One or more credentials is invalid, please try again"
            }
         }
         else {
-            lblmsg.text = "Username/pw wrong, try again"
+            lblmsg.text = "One or more credentials is invalid, please try again"
         }
 }
     
