@@ -21,6 +21,7 @@
 		B0D21DD61F9EA76400C7F85A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */; };
 		B0D21DDE1F9EA7B000C7F85A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DDD1F9EA7B000C7F85A /* MainScreen.swift */; };
 		B0D21DE21F9EAAF200C7F85A /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DE11F9EAAF200C7F85A /* Registration.swift */; };
+		B0EA9B731FC0FDA200A1872B /* Foodlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA9B721FC0FDA200A1872B /* Foodlog.swift */; };
 		E8A4ECF99A5188ABB35E7E3C /* Pods_Project_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		B0D21DD71F9EA76400C7F85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0D21DDD1F9EA7B000C7F85A /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		B0D21DE11F9EAAF200C7F85A /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		B0EA9B721FC0FDA200A1872B /* Foodlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodlog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B0A8A3281F9EAD98005659AE /* Sign-In.swift */,
 				B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */,
 				B0D21DCC1F9EA76400C7F85A /* Main.storyboard */,
+				B0EA9B721FC0FDA200A1872B /* Foodlog.swift */,
 				B098794E1FA9682900026FCC /* Setting.swift */,
 				6DA109CE1FA9525E001871FA /* macro-logo.png */,
 				B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 				B0A8A3291F9EAD98005659AE /* Sign-In.swift in Sources */,
 				B0D21DE21F9EAAF200C7F85A /* Registration.swift in Sources */,
 				B0D21DDE1F9EA7B000C7F85A /* MainScreen.swift in Sources */,
+				B0EA9B731FC0FDA200A1872B /* Foodlog.swift in Sources */,
 				B0D21DC91F9EA76400C7F85A /* AppDelegate.swift in Sources */,
 				B098794F1FA9682900026FCC /* Setting.swift in Sources */,
 				B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */,
