@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Main Screen-->
+        <!--Launch Screen-->
         <scene sceneID="xoh-Sq-8nL">
             <objects>
-                <viewController id="tgY-i0-HIG" customClass="MainScreen" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tgY-i0-HIG" customClass="LaunchScreen" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LqV-RN-rnQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--Sign In-->
         <scene sceneID="wq8-B8-qTc">
             <objects>
-                <viewController id="2Pm-Pl-8A8" customClass="Sign_In" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Pm-Pl-8A8" customClass="SignIn" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywe-k9-UxB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
