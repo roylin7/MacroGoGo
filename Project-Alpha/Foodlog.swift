@@ -26,5 +26,7 @@ class Foodlog{
         self.carb = carb
         self.fat = fat
         self.fat = fat
+        self.protein = protein
     
+}
 }

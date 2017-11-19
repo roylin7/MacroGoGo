@@ -14,6 +14,7 @@ class Registration: UIViewController {
     // to be filled out upon registration prompt
     //
     // account info
+    var alertController:UIAlertController? = nil
     @IBOutlet weak var lblfullname: UITextField!
     @IBOutlet weak var lblusername: UITextField!
     @IBOutlet weak var lblpw: UITextField!
@@ -46,6 +47,108 @@ class Registration: UIViewController {
     @IBAction func btnsignup(_ sender: Any) {
         // select "Sign Up" button to save registration info
         // create Person object for user subsequently
+        if lblfullname.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in full name.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        if lblusername.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in username.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        if lblpw.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in password.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        if lblweight.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in weight (lbs).", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        if lblsex.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in sex either M or F.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        if lblheightF.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in height in feet.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        if lblheightI.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in height in inches.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        
+        self.alertController = UIAlertController(title: "", message: "Registration Complete!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+            print("Ok Button Pressed 1");
+        }
+        self.alertController!.addAction(OKAction)
+        
+        self.present(self.alertController!, animated: true, completion:nil)
+    
         let person = Person(username: lblusername.text!, fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: lblheightF.text!, heightI: lblheightI.text!, weight: lblweight.text!)
         // store Person object in datastore 
         DataStore.shared.addPerson(person: person)
