@@ -1,5 +1,5 @@
 //
-//  MainScreen.swift
+//  LaunchScreen.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 10/23/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainScreen: UIViewController {
+class LaunchScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

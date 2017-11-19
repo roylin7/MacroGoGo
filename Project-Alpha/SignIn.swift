@@ -1,5 +1,5 @@
 //
-//  Sign-In.swift
+//  SignIn.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 10/23/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Sign_In: UIViewController {
+class SignIn: UIViewController {
 
     // UI text fields for username and password associated with account
     // to be filled out upon login prompt

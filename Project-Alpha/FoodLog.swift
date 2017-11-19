@@ -1,5 +1,5 @@
 //
-//  Foodlog.swift
+//  FoodLog.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/18/17.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Foodlog{
+class FoodLog{
+    
+    // attributes for meal entry object
     var year: String
     var month: String
     var day : String
@@ -17,7 +19,7 @@ class Foodlog{
     var fat : String
     var protein : String
     
-    
+    // define constructor
     init(year: String, month: String, day: String,foodname:String, carb: String, fat: String , protein: String) {
         self.year = year
         self.month = month

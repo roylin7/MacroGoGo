@@ -11,7 +11,7 @@
 		6D9C1FC51FA9791100D03DC0 /* macro-apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9C1FC41FA9791000D03DC0 /* macro-apple.png */; };
 		6DA109CF1FA9525E001871FA /* macro-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA109CE1FA9525E001871FA /* macro-logo.png */; };
 		B098794F1FA9682900026FCC /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B098794E1FA9682900026FCC /* Setting.swift */; };
-		B0A8A3291F9EAD98005659AE /* Sign-In.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8A3281F9EAD98005659AE /* Sign-In.swift */; };
+		B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8A3281F9EAD98005659AE /* SignIn.swift */; };
 		B0AF0E871FA297090047F100 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF0E861FA297090047F100 /* Person.swift */; };
 		B0AF0E891FA29A6A0047F100 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF0E881FA29A6A0047F100 /* DataStore.swift */; };
 		B0D21DC91F9EA76400C7F85A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */; };
@@ -19,9 +19,9 @@
 		B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DCF1F9EA76400C7F85A /* Project_Alpha.xcdatamodeld */; };
 		B0D21DD31F9EA76400C7F85A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D21DD21F9EA76400C7F85A /* Assets.xcassets */; };
 		B0D21DD61F9EA76400C7F85A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */; };
-		B0D21DDE1F9EA7B000C7F85A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DDD1F9EA7B000C7F85A /* MainScreen.swift */; };
+		B0D21DDE1F9EA7B000C7F85A /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DDD1F9EA7B000C7F85A /* LaunchScreen.swift */; };
 		B0D21DE21F9EAAF200C7F85A /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DE11F9EAAF200C7F85A /* Registration.swift */; };
-		B0EA9B731FC0FDA200A1872B /* Foodlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA9B721FC0FDA200A1872B /* Foodlog.swift */; };
+		B0EA9B731FC0FDA200A1872B /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA9B721FC0FDA200A1872B /* FoodLog.swift */; };
 		E8A4ECF99A5188ABB35E7E3C /* Pods_Project_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,7 @@
 		6DA109CE1FA9525E001871FA /* macro-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "macro-logo.png"; path = "App-Docs/macro-logo.png"; sourceTree = SOURCE_ROOT; };
 		982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B098794E1FA9682900026FCC /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		B0A8A3281F9EAD98005659AE /* Sign-In.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sign-In.swift"; sourceTree = "<group>"; };
+		B0A8A3281F9EAD98005659AE /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		B0AF0E861FA297090047F100 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B0AF0E881FA29A6A0047F100 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B0D21DC51F9EA76400C7F85A /* Project-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,9 +43,9 @@
 		B0D21DD21F9EA76400C7F85A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0D21DD51F9EA76400C7F85A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0D21DD71F9EA76400C7F85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0D21DDD1F9EA7B000C7F85A /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		B0D21DDD1F9EA7B000C7F85A /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		B0D21DE11F9EAAF200C7F85A /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
-		B0EA9B721FC0FDA200A1872B /* Foodlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodlog.swift; sourceTree = "<group>"; };
+		B0EA9B721FC0FDA200A1872B /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,17 +98,17 @@
 		B0D21DC71F9EA76400C7F85A /* Project-Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				B0D21DDD1F9EA7B000C7F85A /* MainScreen.swift */,
+				B0D21DDD1F9EA7B000C7F85A /* LaunchScreen.swift */,
 				B0D21DE11F9EAAF200C7F85A /* Registration.swift */,
 				B0AF0E861FA297090047F100 /* Person.swift */,
 				B0AF0E881FA29A6A0047F100 /* DataStore.swift */,
-				B0A8A3281F9EAD98005659AE /* Sign-In.swift */,
+				B0A8A3281F9EAD98005659AE /* SignIn.swift */,
 				B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */,
 				B0D21DCC1F9EA76400C7F85A /* Main.storyboard */,
-				B0EA9B721FC0FDA200A1872B /* Foodlog.swift */,
+				B0EA9B721FC0FDA200A1872B /* FoodLog.swift */,
 				B098794E1FA9682900026FCC /* Setting.swift */,
-				6DA109CE1FA9525E001871FA /* macro-logo.png */,
 				B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */,
+				6DA109CE1FA9525E001871FA /* macro-logo.png */,
 				6D9C1FC41FA9791000D03DC0 /* macro-apple.png */,
 				B0D21DD21F9EA76400C7F85A /* Assets.xcassets */,
 				B0D21DD71F9EA76400C7F85A /* Info.plist */,
@@ -258,10 +258,10 @@
 			files = (
 				B0AF0E891FA29A6A0047F100 /* DataStore.swift in Sources */,
 				B0AF0E871FA297090047F100 /* Person.swift in Sources */,
-				B0A8A3291F9EAD98005659AE /* Sign-In.swift in Sources */,
+				B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */,
 				B0D21DE21F9EAAF200C7F85A /* Registration.swift in Sources */,
-				B0D21DDE1F9EA7B000C7F85A /* MainScreen.swift in Sources */,
-				B0EA9B731FC0FDA200A1872B /* Foodlog.swift in Sources */,
+				B0D21DDE1F9EA7B000C7F85A /* LaunchScreen.swift in Sources */,
+				B0EA9B731FC0FDA200A1872B /* FoodLog.swift in Sources */,
 				B0D21DC91F9EA76400C7F85A /* AppDelegate.swift in Sources */,
 				B098794F1FA9682900026FCC /* Setting.swift in Sources */,
 				B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */,
