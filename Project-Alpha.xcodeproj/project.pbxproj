@@ -12,6 +12,7 @@
 		6DA109CF1FA9525E001871FA /* macro-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA109CE1FA9525E001871FA /* macro-logo.png */; };
 		B098794F1FA9682900026FCC /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B098794E1FA9682900026FCC /* Setting.swift */; };
 		B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8A3281F9EAD98005659AE /* SignIn.swift */; };
+		B0A8C6691FC3924200A2AEA7 /* mainscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C6681FC3924200A2AEA7 /* mainscreen.swift */; };
 		B0AF0E871FA297090047F100 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF0E861FA297090047F100 /* Person.swift */; };
 		B0AF0E891FA29A6A0047F100 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF0E881FA29A6A0047F100 /* DataStore.swift */; };
 		B0D21DC91F9EA76400C7F85A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B098794E1FA9682900026FCC /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		B0A8A3281F9EAD98005659AE /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		B0A8C6681FC3924200A2AEA7 /* mainscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainscreen.swift; sourceTree = "<group>"; };
 		B0AF0E861FA297090047F100 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B0AF0E881FA29A6A0047F100 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B0D21DC51F9EA76400C7F85A /* Project-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				B0A8A3281F9EAD98005659AE /* SignIn.swift */,
 				B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */,
 				B0D21DCC1F9EA76400C7F85A /* Main.storyboard */,
+				B0A8C6681FC3924200A2AEA7 /* mainscreen.swift */,
 				B0EA9B721FC0FDA200A1872B /* FoodLog.swift */,
 				B098794E1FA9682900026FCC /* Setting.swift */,
 				B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A8C6691FC3924200A2AEA7 /* mainscreen.swift in Sources */,
 				B0AF0E891FA29A6A0047F100 /* DataStore.swift in Sources */,
 				B0AF0E871FA297090047F100 /* Person.swift in Sources */,
 				B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */,

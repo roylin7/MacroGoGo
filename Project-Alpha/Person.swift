@@ -19,6 +19,9 @@ class Person {
     var heightF: String
     var heightI: String
     var weight : String
+    //var tfat : String
+    //var tcarb : String
+    //var tprotein : String
     
     // constructor defined
     init(username: String, fullname: String, pw: String,sex:String, heightF: String, heightI: String , weight: String) {
@@ -29,7 +32,9 @@ class Person {
         self.heightF = heightF
         self.heightI = heightI
         self.weight = weight
-        
+        //self.tfat = tfat
+        //self.tcarb = tcarb
+        //self.tprotein = tprotein
     }
     
 }
