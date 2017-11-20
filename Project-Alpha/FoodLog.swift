@@ -11,6 +11,8 @@ import Foundation
 class FoodLog{
     
     // attributes for meal entry object
+    
+    var username : String
     var year: String
     var month: String
     var day : String
@@ -20,7 +22,8 @@ class FoodLog{
     var protein : String
     
     // define constructor
-    init(year: String, month: String, day: String,foodname:String, carb: String, fat: String , protein: String) {
+    init(username: String,year: String, month: String, day: String,foodname:String, carb: String, fat: String , protein: String) {
+        self.username = username 
         self.year = year
         self.month = month
         self.day = day

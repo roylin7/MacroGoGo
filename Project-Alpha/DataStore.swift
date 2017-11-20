@@ -92,7 +92,7 @@ class DataStore {
             if let persons = value {
                 // Iterate over the person objects and store in our internal people array.
                 for p in persons {
-                    let person = p.value as! [String:String]
+                    let person = p.value as! [String:AnyObject]
                     let username = person["username"]
                     let fName = person["fName"]
                     let pw = person["pw"]
@@ -100,7 +100,7 @@ class DataStore {
                     let heightF = person["heightF"]
                     let heightI = person["heightI"]
                     let weight = person["weight"]
-                    let newPerson = Person(username: username!, fullname: fName!, pw: pw!,sex: sex!, heightF: heightF!, heightI: heightI!, weight: weight!)
+                    let newPerson = Person(username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String, heightF: heightF! as! String, heightI: heightI! as! String, weight: weight! as! String)
                     self.people.append(newPerson)
                 }
             }

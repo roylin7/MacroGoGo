@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Registration: UIViewController {
 
@@ -146,13 +147,20 @@ class Registration: UIViewController {
             print("Ok Button Pressed 1");
         }
         self.alertController!.addAction(OKAction)
-        
+        let email = String.makeFirebaseString(lblusername.text!)
         self.present(self.alertController!, animated: true, completion:nil)
-    
-        let person = Person(username: lblusername.text!, fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: lblheightF.text!, heightI: lblheightI.text!, weight: lblweight.text!)
-        // store Person object in datastore 
-        DataStore.shared.addPerson(person: person)
-    }
+        let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: lblheightF.text!, heightI: lblheightI.text!, weight: lblweight.text!)
+        // store Person object in datastore and register user 
+        Auth.auth().createUser(withEmail: lblusername.text!, password: person.pw, completion: {(user:User?,error) in
+            if error != nil {
+                print (error)
+                return
+            }
+            
+            DataStore.shared.addPerson(person: person)
+        })
+       
+       
     
     /*
     // MARK: - Navigation
@@ -165,3 +173,7 @@ class Registration: UIViewController {
     */
 
 }
+}
+
+
+
