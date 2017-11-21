@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SignIn: UIViewController {
 
@@ -44,6 +46,14 @@ class SignIn: UIViewController {
            let person = DataStore.shared.getPerson(index: userindex)
            if person.pw == lblpw.text!{
                 lblmsg.text = "Login successful"
+                self.performSegue(withIdentifier: "hehe", sender: nil)
+                
+                Auth.auth().signIn(withEmail: lblusername.text!, password: lblpw.text!) { (user, error) in
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                }
            }
            else if person.pw != lblpw.text!{
                 lblmsg.text = "One or more credentials is invalid, please try again2"

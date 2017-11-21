@@ -30,8 +30,6 @@ class FoodLog{
         self.foodname = foodname
         self.carb = carb
         self.fat = fat
-        self.fat = fat
         self.protein = protein
-    
 }
 }
