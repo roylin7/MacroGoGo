@@ -34,22 +34,23 @@ class SignIn: UIViewController {
     
     // select "Login" button to verify account info in datastore
     @IBAction func btnlogin(_ sender: Any) {
-        if lblusername.text! == " " || lblpw.text! == " " {
-            lblmsg.text = "One or more credentials is missing, please try again"
+        let email = String.makeFirebaseString(lblusername.text!)
+        if email() == " " || lblpw.text! == " " {
+            lblmsg.text = "One or more credentials is missing, please try again1"
         }
         
-        if DataStore.shared.usernameExist(username: lblusername.text!){
-           let userindex = DataStore.shared.usernameIndex(username: lblusername.text!)
+        if DataStore.shared.usernameExist(username: email()){
+           let userindex = DataStore.shared.usernameIndex(username: email())
            let person = DataStore.shared.getPerson(index: userindex)
            if person.pw == lblpw.text!{
                 lblmsg.text = "Login successful"
            }
-           else if person.pw != lblmsg.text!{
-                lblmsg.text = "One or more credentials is invalid, please try again"
+           else if person.pw != lblpw.text!{
+                lblmsg.text = "One or more credentials is invalid, please try again2"
            }
         }
         else {
-            lblmsg.text = "One or more credentials is invalid, please try again"
+            lblmsg.text = "One or more credentials is invalid, please try again3"
         }
 }
     
