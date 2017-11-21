@@ -29,7 +29,7 @@ class Registration: UIViewController {
     @IBOutlet weak var lblweight: UITextField!
     
     func isPasswordValid(_ password : String) -> Bool{
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", ".{8,}")
         return passwordTest.evaluate(with: password)
     }
     
@@ -107,7 +107,7 @@ class Registration: UIViewController {
         {
             let s = lblpw.text
             if(isPasswordValid(s!)) == false{
-                self.alertController = UIAlertController(title: "Error", message: "Please fill in password with 8 characters long, atleast one alphabet, and one special character.", preferredStyle: UIAlertControllerStyle.alert)
+                self.alertController = UIAlertController(title: "Error", message: "Please fill in password with atleast 8 characters long", preferredStyle: UIAlertControllerStyle.alert)
                 
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -172,15 +172,19 @@ class Registration: UIViewController {
             
         }
         
-        self.alertController = UIAlertController(title: "", message: "Registration Complete!", preferredStyle: UIAlertControllerStyle.alert)
+        self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Login In", preferredStyle: UIAlertControllerStyle.alert)
         
+        
+        self.performSegue(withIdentifier: "back", sender: self)
         
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
             print("Ok Button Pressed 1");
         }
         self.alertController!.addAction(OKAction)
-        let email = String.makeFirebaseString(lblusername.text!)
         self.present(self.alertController!, animated: true, completion:nil)
+        
+        
+        let email = String.makeFirebaseString(lblusername.text!)
         let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: lblheightF.text!, heightI: lblheightI.text!, weight: lblweight.text!)
         // store Person object in datastore and register user 
         Auth.auth().createUser(withEmail: lblusername.text!, password: person.pw, completion: {(user:User?,error) in
@@ -191,6 +195,7 @@ class Registration: UIViewController {
             
             DataStore.shared.addPerson(person: person)
         })
+       
        
        
     

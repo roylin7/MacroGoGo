@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="1117.3913043478262" y="6.5217391304347831"/>
         </scene>
-        <!--View Controller-->
+        <!--Reset View Controller-->
         <scene sceneID="NfL-Qy-Wcd">
             <objects>
-                <viewController id="5Ef-oK-mQI" sceneMemberID="viewController">
+                <viewController id="5Ef-oK-mQI" customClass="ResetViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWr-9K-J0c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,7 @@
                                 <color key="textColor" red="0.66825210489999998" green="0.66825210489999998" blue="0.66825210489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password (8 char long, 1 alphabet, 1 special char)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-IU-wah">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password (Atleast 8 characters)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-IU-wah">
                                 <rect key="frame" x="26" y="283" width="382" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -205,7 +205,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnsignup:" destination="QdG-SX-j1F" eventType="touchUpInside" id="sPf-Lx-jhY"/>
-                                    <segue destination="2Pm-Pl-8A8" kind="show" id="OTJ-cG-eF1"/>
+                                    <segue destination="2Pm-Pl-8A8" kind="show" identifier="back" id="BBg-5n-bwH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdC-vP-MkP">
@@ -331,14 +331,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                       " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egT-Nw-d8d">
-                                        <rect key="frame" x="8" y="245" width="255" height="93"/>
+                                        <rect key="frame" x="8" y="278" width="249" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UH-XN-Dpn">
-                                        <rect key="frame" x="31" y="245" width="209" height="30"/>
+                                        <rect key="frame" x="31" y="240" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.89019607840000003" green="0.72156862749999995" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -517,6 +517,6 @@
         <image name="macro-logo.png" width="738" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OTJ-cG-eF1"/>
+        <segue reference="BBg-5n-bwH"/>
     </inferredMetricsTieBreakers>
 </document>
