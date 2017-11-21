@@ -28,6 +28,10 @@ class Registration: UIViewController {
     @IBOutlet weak var lblheightI: UITextField!
     @IBOutlet weak var lblweight: UITextField!
     
+    func isPasswordValid(_ password : String) -> Bool{
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
     
     
     override func viewDidLoad() {
@@ -48,6 +52,18 @@ class Registration: UIViewController {
     @IBAction func btnsignup(_ sender: Any) {
         // select "Sign Up" button to save registration info
         // create Person object for user subsequently
+        if lblfullname.text == "" && lblusername.text == "" && lblpw.text == "" && lblweight.text == "" && lblsex.text == "" && lblheightF.text == "" && lblheightI.text == "" {
+            
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your information.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+        }
         if lblfullname.text == "" {
             
             self.alertController = UIAlertController(title: "Error", message: "Please fill in full name.", preferredStyle: UIAlertControllerStyle.alert)
@@ -85,6 +101,22 @@ class Registration: UIViewController {
             self.alertController!.addAction(OKAction)
             
             self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+        else
+        {
+            let s = lblpw.text
+            if(isPasswordValid(s!)) == false{
+                self.alertController = UIAlertController(title: "Error", message: "Please fill in password with 8 characters long, atleast one alphabet, and one special character.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                
+                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                    print("Ok Button Pressed 1");
+                }
+                self.alertController!.addAction(OKAction)
+                
+                self.present(self.alertController!, animated: true, completion:nil)
+            }
             
         }
         if lblweight.text == "" {
