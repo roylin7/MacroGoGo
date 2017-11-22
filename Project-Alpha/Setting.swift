@@ -24,13 +24,15 @@ class Setting: UIViewController {
     @IBOutlet weak var lbltargetpotein: UITextField!
     @IBOutlet weak var targetcarbohydrate: UITextField!
 
-    @IBOutlet weak var lblpwagain: UITextField!
+    
     @IBOutlet weak var lblbmi: UILabel!
     @IBOutlet weak var lblheightf: UITextField!
     @IBOutlet weak var lblheighti: UITextField!
     @IBOutlet weak var lblweight: UITextField!
     
-    @IBAction func BMIindex(_ sender: Any) {
+    @IBAction func saveButton(_ sender: Any) {
+    
+    
         if lbltargetfat.text == "" && lbltargetpotein.text == "" && targetcarbohydrate.text == "" && lblheightf.text == "" && lblheighti.text == "" && lblweight.text == "" {
             
             self.alertController = UIAlertController(title: "Error", message: "Please enter your information.", preferredStyle: UIAlertControllerStyle.alert)
@@ -93,6 +95,53 @@ class Setting: UIViewController {
             
             self.present(self.alertController!, animated: true, completion:nil)
         }
+        if lblheightf.text == "" {
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+        }
+        if lblheighti.text == "" {
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+        }
+        else{
+            self.alertController = UIAlertController(title: "Thank You", message: "You information will be updated and saved.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+        }
+    }
+    
+    @IBAction func BMIindex(_ sender: Any) {
+        if lblweight.text == "" {
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in weight.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+        }
         else if lblheightf.text == "" {
                 self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
                 
@@ -139,7 +188,8 @@ class Setting: UIViewController {
         
     }
     
-
+    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
