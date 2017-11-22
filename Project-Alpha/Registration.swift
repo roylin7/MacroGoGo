@@ -22,10 +22,7 @@ class Registration: UIViewController {
     
     // user fitness specs
     @IBOutlet weak var lblsex: UITextField!
-<<<<<<< HEAD
-    
-=======
->>>>>>> 0ee205c038e39604e6fca3096eb98e7df5f4ea22
+
     
     func isPasswordValid(_ password : String) -> Bool{
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", ".{8,}")
@@ -118,11 +115,7 @@ class Registration: UIViewController {
             }
             
         }
-<<<<<<< HEAD
-        
-=======
-    
->>>>>>> 0ee205c038e39604e6fca3096eb98e7df5f4ea22
+
         if lblsex.text == "" {
             
             self.alertController = UIAlertController(title: "Error", message: "Please fill in sex either M or F.", preferredStyle: UIAlertControllerStyle.alert)
@@ -136,11 +129,7 @@ class Registration: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
             
         }
-       
-<<<<<<< HEAD
-        
-=======
->>>>>>> 0ee205c038e39604e6fca3096eb98e7df5f4ea22
+
         
         self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Login In", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -155,11 +144,10 @@ class Registration: UIViewController {
         
         
         let email = String.makeFirebaseString(lblusername.text!)
-<<<<<<< HEAD
+
         let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!)
-=======
-        let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: String(0), heightI: String(0), weight: String(0))
->>>>>>> 0ee205c038e39604e6fca3096eb98e7df5f4ea22
+
+       
         // store Person object in datastore and register user 
         Auth.auth().createUser(withEmail: lblusername.text!, password: person.pw, completion: {(user:User?,error) in
             if error != nil {
