@@ -131,16 +131,44 @@ class Registration: UIViewController {
         }
 
         
-        self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Log-In", preferredStyle: UIAlertControllerStyle.alert)
+        let newString = lblusername.text?.replacingOccurrences(of: ".", with: " ")
         
-        
-        self.performSegue(withIdentifier: "back", sender: self)
-        
-        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-            print("Ok Button Pressed 1");
+        if(DataStore.shared.usernameExist(username: newString!)){
+            
+            self.alertController = UIAlertController(title: "Error", message: "Username already exists", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                
+                print("Ok Button Pressed 1");
+                
+            }
+            
+            self.alertController!.addAction(OKAction)
+            
+            
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
         }
-        self.alertController!.addAction(OKAction)
-        self.present(self.alertController!, animated: true, completion:nil)
+            
+        else{
+            self.performSegue(withIdentifier: "back", sender: self)
+            self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Log-In", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                
+                print("Ok Button Pressed 1");
+                
+            }
+            
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+            
         
         
         let email = String.makeFirebaseString(lblusername.text!)
