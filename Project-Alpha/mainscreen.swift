@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainScreen: UIViewController {
-    
+    var alertController:UIAlertController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +22,26 @@ class MainScreen: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logout(_ sender: Any) {
+        
+    
+        self.performSegue(withIdentifier: "home", sender: self)
+        self.alertController = UIAlertController(title: "", message: "Logged Out Sucessfully!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+            
+            print("Ok Button Pressed 1");
+            
+        }
+        
+        self.alertController!.addAction(OKAction)
+        
+        self.present(self.alertController!, animated: true, completion:nil)
+        
+    }
+    }
     
     /*
      // MARK: - Navigation
@@ -32,5 +53,5 @@ class MainScreen: UIViewController {
      }
      */
     
-}
+
 

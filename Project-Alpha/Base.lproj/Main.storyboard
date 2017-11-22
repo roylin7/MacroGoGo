@@ -363,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="3793" y="-636"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Screen-->
         <scene sceneID="yqG-h8-LfR">
             <objects>
-                <viewController id="JfY-PL-qQE" sceneMemberID="viewController">
+                <viewController id="JfY-PL-qQE" customClass="MainScreen" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abe-nd-kPZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,11 +378,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snd-cD-cFF">
+                                <rect key="frame" x="158" y="461" width="99" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="JfY-PL-qQE" eventType="touchDown" id="gvS-MT-zkA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.0" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="bD4-93-6Y0"/>
                     </view>
                     <navigationItem key="navigationItem" id="pLC-xJ-tmQ"/>
+                    <connections>
+                        <segue destination="tgY-i0-HIG" kind="show" identifier="home" id="A5h-gG-NCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kah-4f-O9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -599,5 +610,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c44-q1-5Or"/>
+        <segue reference="A5h-gG-NCJ"/>
     </inferredMetricsTieBreakers>
 </document>
