@@ -40,7 +40,7 @@ class SignIn: UIViewController {
     @IBAction func btnlogin(_ sender: Any) {
         let email = String.makeFirebaseString(lblusername.text!)
         if email() == " " || lblpw.text! == " " {
-            lblmsg.text = "One or more credentials is missing, please try again1"
+            lblmsg.text = "One or more credentials is missing, please try again!"
             
         }
         
@@ -60,11 +60,11 @@ class SignIn: UIViewController {
                 }
            }
            else if person.pw != lblpw.text!{
-                lblmsg.text = "One or more credentials is invalid, please try again2"
+                lblmsg.text = "One or more credentials is invalid, please try again!!"
            }
         }
         else {
-            lblmsg.text = "One or more credentials is invalid, please try again3"
+            lblmsg.text = "One or more credentials is invalid, please try again!!!"
         }
         
 }

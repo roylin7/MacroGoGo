@@ -62,7 +62,7 @@ class Registration: UIViewController {
         }
         if lblfullname.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in full name.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Full Name'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -75,7 +75,7 @@ class Registration: UIViewController {
         }
         if lblusername.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in username.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Username'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -88,7 +88,7 @@ class Registration: UIViewController {
         }
         if lblpw.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in password.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Password'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -103,7 +103,7 @@ class Registration: UIViewController {
         {
             let s = lblpw.text
             if(isPasswordValid(s!)) == false{
-                self.alertController = UIAlertController(title: "Error", message: "Please fill in password with atleast 8 characters long", preferredStyle: UIAlertControllerStyle.alert)
+                self.alertController = UIAlertController(title: "Error", message: "Please choose a password with at least 8 characters", preferredStyle: UIAlertControllerStyle.alert)
                 
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -118,7 +118,7 @@ class Registration: UIViewController {
 
         if lblsex.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in sex either M or F.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Sex' (M/F)", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -131,7 +131,7 @@ class Registration: UIViewController {
         }
 
         
-        self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Login In", preferredStyle: UIAlertControllerStyle.alert)
+        self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Log-In", preferredStyle: UIAlertControllerStyle.alert)
         
         
         self.performSegue(withIdentifier: "back", sender: self)
