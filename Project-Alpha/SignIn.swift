@@ -16,7 +16,7 @@ class SignIn: UIViewController {
     // to be filled out upon login prompt
     @IBOutlet weak var lblusername: UITextField!
     @IBOutlet weak var lblpw: UITextField!
-    
+   
     
     @IBOutlet weak var lblmsg: UILabel!
     override func viewDidLoad() {
@@ -34,11 +34,14 @@ class SignIn: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     // select "Login" button to verify account info in datastore
     @IBAction func btnlogin(_ sender: Any) {
         let email = String.makeFirebaseString(lblusername.text!)
         if email() == " " || lblpw.text! == " " {
             lblmsg.text = "One or more credentials is missing, please try again1"
+            
         }
         
         if DataStore.shared.usernameExist(username: email()){
@@ -46,7 +49,8 @@ class SignIn: UIViewController {
            let person = DataStore.shared.getPerson(index: userindex)
            if person.pw == lblpw.text!{
                 lblmsg.text = "Login successful"
-                self.performSegue(withIdentifier: "hehe", sender: nil)
+                self.performSegue(withIdentifier: "hehe", sender: self)
+            
                 
                 Auth.auth().signIn(withEmail: lblusername.text!, password: lblpw.text!) { (user, error) in
                     if error != nil{
@@ -62,6 +66,9 @@ class SignIn: UIViewController {
         else {
             lblmsg.text = "One or more credentials is invalid, please try again3"
         }
+        
 }
+    
+    
     
 }

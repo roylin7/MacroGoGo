@@ -293,7 +293,6 @@
                                         </state>
                                         <connections>
                                             <action selector="btnlogin:" destination="2Pm-Pl-8A8" eventType="touchUpInside" id="ZiF-sP-sAG"/>
-                                            <segue destination="jck-Qw-hQ7" kind="presentation" identifier="hehe" id="61b-Mw-QrR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -307,6 +306,7 @@
                         <outlet property="lblmsg" destination="egT-Nw-d8d" id="vMr-fV-beB"/>
                         <outlet property="lblpw" destination="hz5-lF-jF6" id="fBN-zC-P2T"/>
                         <outlet property="lblusername" destination="0nW-kn-dfB" id="bVT-RW-Bgc"/>
+                        <segue destination="jck-Qw-hQ7" kind="presentation" identifier="hehe" id="4UW-rF-qdI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUG-tU-WEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +362,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFZ-D7-AOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2834" y="-222"/>
+            <point key="canvasLocation" x="2728" y="-170"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wLn-aR-BQa">
