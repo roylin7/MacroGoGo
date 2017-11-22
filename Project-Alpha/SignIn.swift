@@ -22,6 +22,7 @@ class SignIn: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // page header
+        DataStore.shared.loadPeople()
         self.title = "Sign-In"
         print("username",lblusername.text!)
         print("pw",lblpw.text!)

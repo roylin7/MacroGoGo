@@ -136,6 +136,7 @@
                         <outlet property="newPassword" destination="te6-X5-fLh" id="ahK-a7-cgY"/>
                         <outlet property="password" destination="rkr-Ku-RBV" id="H6n-de-85x"/>
                         <outlet property="username" destination="o64-Ol-o0T" id="1KU-A4-aqF"/>
+                        <segue destination="2Pm-Pl-8A8" kind="show" identifier="ss" id="c44-q1-5Or"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdV-7F-5fC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -597,6 +598,6 @@
         <image name="macro-logo.png" width="738" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cTt-Tf-7pJ"/>
+        <segue reference="c44-q1-5Or"/>
     </inferredMetricsTieBreakers>
 </document>
