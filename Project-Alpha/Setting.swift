@@ -9,6 +9,16 @@
 import UIKit
 
 class Setting: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "Setting"
+        print("ViewController1: viewDidLoad")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewController1: viewWillAppear")
+    }
     var alertController:UIAlertController? = nil
     @IBOutlet weak var lbltargetfat: UITextField!
     @IBOutlet weak var lbltargetpotein: UITextField!
@@ -128,11 +138,7 @@ class Setting: UIViewController {
         }
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

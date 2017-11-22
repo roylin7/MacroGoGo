@@ -1,24 +1,24 @@
 //
-//  mainscreen.swift
+//  HomeViewController.swift
 //  Project-Alpha
 //
-//  Created by Roy Lin on 11/20/17.
+//  Created by Sheryar Ali on 11/21/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
 
 import UIKit
 
-class mainscreen: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Home"
-        print("ViewController1: viewDidLoad")
+
+        // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("ViewController1: viewWillAppear")
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 
