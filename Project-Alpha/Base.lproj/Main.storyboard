@@ -337,6 +337,15 @@
                     <view key="view" contentMode="scaleToFill" id="abe-nd-kPZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubP-zy-Omw">
+                                <rect key="frame" x="107" y="293" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="0.28362475339999998" green="0.051068933589999997" blue="0.33901392489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="bD4-93-6Y0"/>
                     </view>
@@ -344,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kah-4f-O9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4696" y="-637"/>
+            <point key="canvasLocation" x="4695.652173913044" y="-637.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="edh-wY-fwK">
@@ -358,6 +367,7 @@
                     <connections>
                         <segue destination="SL2-5x-ThJ" kind="relationship" relationship="viewControllers" id="6uD-bk-966"/>
                         <segue destination="mTW-an-p7h" kind="relationship" relationship="viewControllers" id="5Xz-KF-y6h"/>
+                        <segue destination="5fj-kV-HfT" kind="relationship" relationship="viewControllers" id="djz-KU-0AB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFZ-D7-AOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,6 +522,22 @@
             </objects>
             <point key="canvasLocation" x="4057.971014492754" y="764.67391304347836"/>
         </scene>
+        <!--Exercise log-->
+        <scene sceneID="jBN-Ys-7d0">
+            <objects>
+                <viewController id="5fj-kV-HfT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qjY-hd-vm3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.28362475339999998" green="0.051068933589999997" blue="0.33901392489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="PkX-OO-0Y4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Exercise log" image="item4" id="RA0-VO-7aN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hb1-q5-Vzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5272" y="650"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lOy-nq-Fph">
             <objects>
@@ -534,6 +560,7 @@
     <resources>
         <image name="item1" width="29" height="30"/>
         <image name="item2" width="30" height="30"/>
+        <image name="item4" width="32" height="27"/>
         <image name="macro-apple.png" width="1019" height="877"/>
         <image name="macro-logo.png" width="738" height="256"/>
     </resources>
