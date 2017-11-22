@@ -100,7 +100,7 @@ class DataStore {
                     let heightF = person["heightF"]
                     let heightI = person["heightI"]
                     let weight = person["weight"]
-                    let newPerson = Person(username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String, heightF: heightF! as! String, heightI: heightI! as! String, weight: weight! as! String)
+                    let newPerson = Person(username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
                     self.people.append(newPerson)
                 }
             }
@@ -116,9 +116,7 @@ class DataStore {
             "fName": person.fullname,
             "pw": person.pw,
             "sex": person.sex,
-            "heightF": person.heightF,
-            "heightI": person.heightI,
-            "weight" : person.weight
+           
         ]
         
         // Save to Firebase.

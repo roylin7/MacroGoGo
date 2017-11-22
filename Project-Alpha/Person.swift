@@ -16,22 +16,22 @@ class Person {
     var fullname: String
     var pw: String
     var sex: String
-    var heightF: String
-    var heightI: String
-    var weight : String
+    //var heightF: String
+    //var heightI: String
+    //var weight : String
     //var tfat : String
     //var tcarb : String
     //var tprotein : String
     
     // constructor defined
-    init(username: String, fullname: String, pw: String,sex:String, heightF: String, heightI: String , weight: String) {
+    init(username: String, fullname: String, pw: String,sex:String) {
         self.username = username
         self.fullname = fullname
         self.pw = pw
         self.sex = sex
-        self.heightF = heightF
-        self.heightI = heightI
-        self.weight = weight
+        //self.heightF = heightF
+        //self.heightI = heightI
+        //self.weight = weight
         //self.tfat = tfat
         //self.tcarb = tcarb
         //self.tprotein = tprotein
