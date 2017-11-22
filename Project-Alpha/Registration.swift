@@ -22,11 +22,6 @@ class Registration: UIViewController {
     
     // user fitness specs
     @IBOutlet weak var lblsex: UITextField!
-    // height in feet
-    @IBOutlet weak var lblheightF: UITextField!
-    // height in inches
-    @IBOutlet weak var lblheightI: UITextField!
-    @IBOutlet weak var lblweight: UITextField!
     
     func isPasswordValid(_ password : String) -> Bool{
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", ".{8,}")
@@ -52,7 +47,7 @@ class Registration: UIViewController {
     @IBAction func btnsignup(_ sender: Any) {
         // select "Sign Up" button to save registration info
         // create Person object for user subsequently
-        if lblfullname.text == "" && lblusername.text == "" && lblpw.text == "" && lblweight.text == "" && lblsex.text == "" && lblheightF.text == "" && lblheightI.text == "" {
+        if lblfullname.text == "" && lblusername.text == "" && lblpw.text == "" && lblsex.text == ""  {
             
             self.alertController = UIAlertController(title: "Error", message: "Please enter your information.", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -119,19 +114,7 @@ class Registration: UIViewController {
             }
             
         }
-        if lblweight.text == "" {
-            
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in weight (lbs).", preferredStyle: UIAlertControllerStyle.alert)
-            
-            
-            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-                print("Ok Button Pressed 1");
-            }
-            self.alertController!.addAction(OKAction)
-            
-            self.present(self.alertController!, animated: true, completion:nil)
-            
-        }
+    
         if lblsex.text == "" {
             
             self.alertController = UIAlertController(title: "Error", message: "Please fill in sex either M or F.", preferredStyle: UIAlertControllerStyle.alert)
@@ -145,32 +128,7 @@ class Registration: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
             
         }
-        if lblheightF.text == "" {
-            
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in height in feet.", preferredStyle: UIAlertControllerStyle.alert)
-            
-            
-            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-                print("Ok Button Pressed 1");
-            }
-            self.alertController!.addAction(OKAction)
-            
-            self.present(self.alertController!, animated: true, completion:nil)
-            
-        }
-        if lblheightI.text == "" {
-            
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in height in inches.", preferredStyle: UIAlertControllerStyle.alert)
-            
-            
-            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-                print("Ok Button Pressed 1");
-            }
-            self.alertController!.addAction(OKAction)
-            
-            self.present(self.alertController!, animated: true, completion:nil)
-            
-        }
+       
         
         self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Login In", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -185,7 +143,7 @@ class Registration: UIViewController {
         
         
         let email = String.makeFirebaseString(lblusername.text!)
-        let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: lblheightF.text!, heightI: lblheightI.text!, weight: lblweight.text!)
+        let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!, heightF: String(0), heightI: String(0), weight: String(0))
         // store Person object in datastore and register user 
         Auth.auth().createUser(withEmail: lblusername.text!, password: person.pw, completion: {(user:User?,error) in
             if error != nil {
