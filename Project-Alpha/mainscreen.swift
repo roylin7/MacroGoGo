@@ -23,7 +23,11 @@ class MainScreen: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     
         self.performSegue(withIdentifier: "home", sender: self)
         self.alertController = UIAlertController(title: "", message: "Logged Out Sucessfully!", preferredStyle: UIAlertControllerStyle.alert)

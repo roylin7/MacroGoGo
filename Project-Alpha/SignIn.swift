@@ -58,6 +58,8 @@ class SignIn: UIViewController {
                         print(error)
                         return
                     }
+                    let isAnonymous = user!.isAnonymous
+                    let uid = user!.uid
                 }
            }
            else if person.pw != lblpw.text!{
