@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
+
 class DataStore {
     
     static let shared = DataStore()
