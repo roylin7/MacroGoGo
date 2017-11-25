@@ -21,6 +21,7 @@ class SignIn: UIViewController {
     @IBOutlet weak var lblmsg: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // page header
         DataStore.shared.loadPeople()
         self.title = "Sign-In"
@@ -35,10 +36,11 @@ class SignIn: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+   
     
     // select "Login" button to verify account info in datastore
     @IBAction func btnlogin(_ sender: Any) {
+        
         let email = String.makeFirebaseString(lblusername.text!)
         if email() == " " || lblpw.text! == " " {
             lblmsg.text = "One or more credentials is missing, please try again!"
