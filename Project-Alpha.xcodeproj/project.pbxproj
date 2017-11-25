@@ -11,6 +11,7 @@
 		6D9C1FC51FA9791100D03DC0 /* macro-apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9C1FC41FA9791000D03DC0 /* macro-apple.png */; };
 		6DA109CF1FA9525E001871FA /* macro-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA109CE1FA9525E001871FA /* macro-logo.png */; };
 		6DF35C521FC5392A0062C80E /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF35C511FC5392A0062C80E /* MainScreen.swift */; };
+		AF0422431FC9830500507F57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0422421FC9830500507F57 /* CameraViewController.swift */; };
 		AF8E9FA61FC8D06900946143 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E9FA51FC8D06900946143 /* CustomCell.swift */; };
 		AF8E9FA81FC8D36C00946143 /* FoodLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */; };
 		AF9EECB71FC4FF5E00186E6B /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */; };
@@ -38,6 +39,7 @@
 		6DA109CE1FA9525E001871FA /* macro-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "macro-logo.png"; path = "App-Docs/macro-logo.png"; sourceTree = SOURCE_ROOT; };
 		6DF35C511FC5392A0062C80E /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF0422421FC9830500507F57 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		AF8E9FA51FC8D06900946143 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogViewController.swift; sourceTree = "<group>"; };
 		AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				B098794E1FA9682900026FCC /* Setting.swift */,
 				B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */,
 				6DA109CE1FA9525E001871FA /* macro-logo.png */,
+				AF0422421FC9830500507F57 /* CameraViewController.swift */,
 				6D9C1FC41FA9791000D03DC0 /* macro-apple.png */,
 				AFBC44CE1FC418040059C73F /* ResetViewController.swift */,
 				B0D21DD21F9EA76400C7F85A /* Assets.xcassets */,
@@ -284,6 +287,7 @@
 				B0EA9B731FC0FDA200A1872B /* FoodLog.swift in Sources */,
 				AF8E9FA81FC8D36C00946143 /* FoodLogViewController.swift in Sources */,
 				AFBC44CF1FC418040059C73F /* ResetViewController.swift in Sources */,
+				AF0422431FC9830500507F57 /* CameraViewController.swift in Sources */,
 				B0D21DC91F9EA76400C7F85A /* AppDelegate.swift in Sources */,
 				B098794F1FA9682900026FCC /* Setting.swift in Sources */,
 				B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */,
@@ -424,12 +428,14 @@
 			baseConfigurationReference = 1F119F8AD3C4D7EB549ED0AC /* Pods-Project-Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6L969FCC4W;
+				DEVELOPMENT_TEAM = VT87TGU599;
 				INFOPLIST_FILE = "Project-Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LinRoy.Project-Alpha";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcogogo.ios121212;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,12 +446,14 @@
 			baseConfigurationReference = 61C4B0C429039005B8166D2A /* Pods-Project-Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6L969FCC4W;
+				DEVELOPMENT_TEAM = VT87TGU599;
 				INFOPLIST_FILE = "Project-Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LinRoy.Project-Alpha";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcogogo.ios121212;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
