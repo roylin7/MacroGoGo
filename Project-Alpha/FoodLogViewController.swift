@@ -24,17 +24,8 @@ class FoodLogViewController: UIViewController {
     
 }
 
-extension FoodLogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
-    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        
-            let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "c", for: indexPath) as! CustomCell
-            cell.dateLabel.text = cellState.text
-    }
+extension FoodLogViewController: JTAppleCalendarViewDataSource{
     
-    
-    
-    
-
 
     func configureCalendar(_ calender: JTAppleCalendarView) -> ConfigurationParameters {
         
@@ -48,10 +39,29 @@ extension FoodLogViewController: JTAppleCalendarViewDataSource, JTAppleCalendarV
         return parameters
     }
     
+    
+    
+    
+}
+
+extension FoodLogViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "c", for: indexPath) as! CustomCell
         cell.dateLabel.text = cellState.text
         return cell
+    }
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "c", for: indexPath) as! CustomCell
+        cell.dateLabel.text = cellState.text
+    }
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validcell = cell as? CustomCell else { return }
+         validcell.selectView.isHidden = false
+        }
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validcell = cell as? CustomCell else { return }
+        validcell.selectView.isHidden = true
     }
     
 }
