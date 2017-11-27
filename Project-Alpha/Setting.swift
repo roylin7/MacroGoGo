@@ -8,11 +8,18 @@
 
 import UIKit
 
-class Setting: UIViewController {
+class Setting: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Settings"
         print("ViewController1: viewDidLoad")
+        lblheightf.delegate = self
+        lblweight.delegate = self
+        lbltargetfat.delegate = self
+        targetcarbohydrate.delegate = self
+        lbltargetpotein.delegate = self
+        lblheighti.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +37,18 @@ class Setting: UIViewController {
     @IBOutlet weak var lblheighti: UITextField!
     @IBOutlet weak var lblweight: UITextField!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user touches on the main view (outside the UITextField).
+    //
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     @IBAction func saveButton(_ sender: Any) {
     
     

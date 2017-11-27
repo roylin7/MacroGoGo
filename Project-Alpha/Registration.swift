@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class Registration: UIViewController {
+class Registration: UIViewController, UITextFieldDelegate  {
 
     // UI text fields for user specs
     // to be filled out upon registration prompt
@@ -34,14 +34,28 @@ class Registration: UIViewController {
         super.viewDidLoad()
         // page header
         self.title = "Registration"
-        
-
+        lblpw.delegate = self
+        lblfullname.delegate = self
+        lblusername.delegate = self
+        lblsex.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user touches on the main view (outside the UITextField).
+    //
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 
