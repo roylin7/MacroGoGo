@@ -369,7 +369,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uv3-5e-1wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3793" y="-636"/>
+            <point key="canvasLocation" x="3722" y="-670"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="yqG-h8-LfR">
@@ -601,7 +601,7 @@
                     <connections>
                         <segue destination="SL2-5x-ThJ" kind="relationship" relationship="viewControllers" id="6uD-bk-966"/>
                         <segue destination="mTW-an-p7h" kind="relationship" relationship="viewControllers" id="5Xz-KF-y6h"/>
-                        <segue destination="rPO-WG-gpo" kind="relationship" relationship="viewControllers" id="qWs-kI-ne3"/>
+                        <segue destination="qYu-2J-x4G" kind="relationship" relationship="viewControllers" id="phv-3f-5Ez"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFZ-D7-AOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -756,7 +756,7 @@
             </objects>
             <point key="canvasLocation" x="3330" y="768"/>
         </scene>
-        <!--Exercise log-->
+        <!--View Controller-->
         <scene sceneID="jBN-Ys-7d0">
             <objects>
                 <viewController id="5fj-kV-HfT" sceneMemberID="viewController">
@@ -769,7 +769,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add new log"/>
                                 <connections>
-                                    <segue destination="n1D-vP-aUc" kind="show" id="QdQ-w1-PPE"/>
+                                    <segue destination="n1D-vP-aUc" kind="show" id="I9j-p9-1pY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gn-Gy-IVg">
@@ -777,35 +777,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show logs"/>
                                 <connections>
-                                    <segue destination="DIn-K4-hy0" kind="show" id="IHG-sm-UOW"/>
+                                    <segue destination="DIn-K4-hy0" kind="show" id="lZ6-Yr-cxm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.0" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="PkX-OO-0Y4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercise log" image="item4" id="RA0-VO-7aN"/>
+                    <navigationItem key="navigationItem" id="zhT-dY-AZG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb1-q5-Vzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5159" y="849"/>
-        </scene>
-        <!--Exercise log-->
-        <scene sceneID="xJr-dj-nzT">
-            <objects>
-                <navigationController id="rPO-WG-gpo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exercise log" id="Q2d-FL-LHl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dOh-OH-DDS">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="5fj-kV-HfT" kind="presentation" id="0wl-la-cjM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CcY-wn-P6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4301" y="788"/>
+            <point key="canvasLocation" x="5465.217391304348" y="848.64130434782612"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="a3G-iK-QTF">
@@ -898,7 +881,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqH-2k-ZRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6292.753623188406" y="870.6521739130435"/>
+            <point key="canvasLocation" x="6600.0000000000009" y="870.6521739130435"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="Eg7-ax-gk1">
@@ -949,6 +932,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpP-Sc-Wt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104" y="7.1964017991004505"/>
+        </scene>
+        <!--Exercise log-->
+        <scene sceneID="dy5-az-N8T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qYu-2J-x4G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Exercise log" image="item4" id="RA0-VO-7aN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lsv-EX-VKD">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5fj-kV-HfT" kind="relationship" relationship="rootViewController" id="JDm-2k-h6R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0j-gM-BkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4591" y="849"/>
         </scene>
     </scenes>
     <resources>
