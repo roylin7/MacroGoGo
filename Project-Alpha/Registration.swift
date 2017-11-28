@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class Registration: UIViewController {
+class Registration: UIViewController, UITextFieldDelegate  {
 
     // UI text fields for user specs
     // to be filled out upon registration prompt
@@ -34,14 +34,28 @@ class Registration: UIViewController {
         super.viewDidLoad()
         // page header
         self.title = "Registration"
-        
-
+        lblpw.delegate = self
+        lblfullname.delegate = self
+        lblusername.delegate = self
+        lblsex.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user touches on the main view (outside the UITextField).
+    //
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 
@@ -62,7 +76,7 @@ class Registration: UIViewController {
         }
         if lblfullname.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in full name.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Full Name'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -75,7 +89,7 @@ class Registration: UIViewController {
         }
         if lblusername.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in username.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Username'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -88,7 +102,7 @@ class Registration: UIViewController {
         }
         if lblpw.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in password.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Password'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -103,7 +117,7 @@ class Registration: UIViewController {
         {
             let s = lblpw.text
             if(isPasswordValid(s!)) == false{
-                self.alertController = UIAlertController(title: "Error", message: "Please fill in password with atleast 8 characters long", preferredStyle: UIAlertControllerStyle.alert)
+                self.alertController = UIAlertController(title: "Error", message: "Please choose a password with at least 8 characters", preferredStyle: UIAlertControllerStyle.alert)
                 
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -118,7 +132,7 @@ class Registration: UIViewController {
 
         if lblsex.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in sex either M or F.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Sex' (M/F)", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -131,16 +145,44 @@ class Registration: UIViewController {
         }
 
         
-        self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Login In", preferredStyle: UIAlertControllerStyle.alert)
+        let newString = lblusername.text?.replacingOccurrences(of: ".", with: " ")
         
-        
-        self.performSegue(withIdentifier: "back", sender: self)
-        
-        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
-            print("Ok Button Pressed 1");
+        if(DataStore.shared.usernameExist(username: newString!)){
+            
+            self.alertController = UIAlertController(title: "Error", message: "Username already exists", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                
+                print("Ok Button Pressed 1");
+                
+            }
+            
+            self.alertController!.addAction(OKAction)
+            
+            
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
         }
-        self.alertController!.addAction(OKAction)
-        self.present(self.alertController!, animated: true, completion:nil)
+            
+        else{
+            self.performSegue(withIdentifier: "back", sender: self)
+            self.alertController = UIAlertController(title: "", message: "Registration Complete! Please Log-In", preferredStyle: UIAlertControllerStyle.alert)
+            
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+                
+                print("Ok Button Pressed 1");
+                
+            }
+            
+            self.alertController!.addAction(OKAction)
+            
+            self.present(self.alertController!, animated: true, completion:nil)
+            
+        }
+            
         
         
         let email = String.makeFirebaseString(lblusername.text!)

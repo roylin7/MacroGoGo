@@ -8,11 +8,18 @@
 
 import UIKit
 
-class Setting: UIViewController {
+class Setting: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Setting"
+        self.navigationItem.title = "Settings"
         print("ViewController1: viewDidLoad")
+        lblheightf.delegate = self
+        lblweight.delegate = self
+        lbltargetfat.delegate = self
+        targetcarbohydrate.delegate = self
+        lbltargetpotein.delegate = self
+        lblheighti.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,12 +37,24 @@ class Setting: UIViewController {
     @IBOutlet weak var lblheighti: UITextField!
     @IBOutlet weak var lblweight: UITextField!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user touches on the main view (outside the UITextField).
+    //
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     @IBAction func saveButton(_ sender: Any) {
     
     
         if lbltargetfat.text == "" && lbltargetpotein.text == "" && targetcarbohydrate.text == "" && lblheightf.text == "" && lblheighti.text == "" && lblweight.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please enter your information.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your information", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -47,7 +66,7 @@ class Setting: UIViewController {
         }
         if lbltargetpotein.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in protein target.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Protein Target'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -60,7 +79,7 @@ class Setting: UIViewController {
         }
         if lbltargetfat.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in fat target.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Fat Target'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -73,7 +92,7 @@ class Setting: UIViewController {
         }
         if targetcarbohydrate.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in carboyhydrate target.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Carboyhydrate Target'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -85,7 +104,7 @@ class Setting: UIViewController {
             
         }
         if lblweight.text == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in weight.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Weight'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -96,7 +115,7 @@ class Setting: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
         }
         if lblheightf.text == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Height'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -107,7 +126,7 @@ class Setting: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
         }
         if lblheighti.text == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Height'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -118,7 +137,7 @@ class Setting: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
         }
         else{
-            self.alertController = UIAlertController(title: "Thank You", message: "You information will be updated and saved.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Thank You", message: "Your information will be updated and saved.", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -132,7 +151,7 @@ class Setting: UIViewController {
     
     @IBAction func BMIindex(_ sender: Any) {
         if lblweight.text == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in weight.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Weight'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -143,7 +162,7 @@ class Setting: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
         }
         else if lblheightf.text == "" {
-                self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
+                self.alertController = UIAlertController(title: "Error", message: "Please complete 'Height'", preferredStyle: UIAlertControllerStyle.alert)
                 
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -154,7 +173,7 @@ class Setting: UIViewController {
                 self.present(self.alertController!, animated: true, completion:nil)
             }
         else if lblheighti.text == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in height.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'Height'", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -171,16 +190,16 @@ class Setting: UIViewController {
             var bmi = double_t(weight / height)
             var result = ""
             if bmi < 18{
-                result = "Underweight, it is time to eat."
+                result = "Underweight, but there's room for improvement!"
             }
             else if (bmi > 18 && bmi < 25 ) {
-                result = "Healthy, but you can always improve."
+                result = "Healthy BMI!"
             }
-            else if(bmi>25 && bmi < 29.9 ){
-                result = "Obese, but you got this."
+            else if(bmi > 25 && bmi < 29.9 ){
+                result = "Overweight, but it's not too late!"
             }
             else{
-                result = "Overweight, it's not too late."
+                result = "Obese, but who's counting anyways?!"
             }
             
             lblbmi.text = String(bmi) + "-" + result

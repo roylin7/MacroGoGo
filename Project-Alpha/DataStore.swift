@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
+
 class DataStore {
     
     static let shared = DataStore()
@@ -76,6 +77,36 @@ class DataStore {
         }
         
     }
+    func getUsername(username: String) -> String{
+        var usernamelist1 = DataStore.shared.getUserNameList()
+   
+        if usernamelist1.contains(username){
+            return username
+        }
+      
+        else{
+            return "username not found"
+            
+            
+        }
+    }
+    
+    func updatePassword(username: String, password: String) {
+        let place = DataStore.shared.usernameIndex(username: username)
+        let person = people[place]
+        print(person)
+        self.ref.child("people").child(person.username).updateChildValues(["pw":password])
+    }
+    
+    func getPassword(username: String) -> String {
+  
+        let place = DataStore.shared.usernameIndex(username: username)
+        let person = people[place]
+        let oldpassword = person.pw
+        return oldpassword
+    }
+    
+    
     
     
     
