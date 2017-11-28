@@ -187,18 +187,34 @@ class Registration: UIViewController, UITextFieldDelegate  {
         
         let email = String.makeFirebaseString(lblusername.text!)
 
-        let person = Person(username:email() , fullname: lblfullname.text!, pw: lblpw.text!, sex: lblsex.text!)
+        
 
        
         // store Person object in datastore and register user 
-        Auth.auth().createUser(withEmail: lblusername.text!, password: person.pw, completion: {(user:User?,error) in
+        Auth.auth().createUser(withEmail: lblusername.text!, password: lblpw.text!, completion: {(user:User?,error) in
             if error != nil {
                 print (error)
                 return
             }
-            
-            DataStore.shared.addPerson(person: person)
-        })
+            else{
+                Auth.auth().signIn(withEmail: self.lblusername.text!, password: self.lblpw.text!, completion: { (user, error) in
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                    else{
+                        let uid = Auth.auth().currentUser?.uid
+                        let person = Person(uid:uid!, username:email() , fullname: self.lblfullname.text!, pw: self.lblpw.text!, sex: self.lblsex.text!)
+                        DataStore.shared.addPerson(person: person)
+                        do {
+                            try Auth.auth().signOut()
+                        } catch let signOutError as NSError {
+                            print ("Error signing out: %@", signOutError)
+                        }
+                    }
+                })
+            }
+            })
        
        
        
@@ -215,6 +231,5 @@ class Registration: UIViewController, UITextFieldDelegate  {
 
 }
 }
-
 
 

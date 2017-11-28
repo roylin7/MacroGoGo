@@ -124,14 +124,13 @@ class DataStore {
                 // Iterate over the person objects and store in our internal people array.
                 for p in persons {
                     let person = p.value as! [String:AnyObject]
+                    let uid = person["uid"]
                     let username = person["username"]
                     let fName = person["fName"]
                     let pw = person["pw"]
                     let sex = person["sex"]
-                    let heightF = person["heightF"]
-                    let heightI = person["heightI"]
-                    let weight = person["weight"]
-                    let newPerson = Person(username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
+                    
+                    let newPerson = Person(uid:uid! as! String ,username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
                     self.people.append(newPerson)
                 }
             }
@@ -143,6 +142,7 @@ class DataStore {
     func addPerson(person: Person) {
         // define array of key/value pairs to store for this person.
         let personRecord = [
+            "uid" : person.uid,
             "username": person.username,
             "fName": person.fullname,
             "pw": person.pw,
@@ -151,7 +151,7 @@ class DataStore {
         ]
         
         // Save to Firebase.
-        self.ref.child("people").child(person.username).setValue(personRecord)
+        self.ref.child("people").child(person.uid).setValue(personRecord)
         
         // Also save to our internal array, to stay in sync with what's in Firebase.
         people.append(person)

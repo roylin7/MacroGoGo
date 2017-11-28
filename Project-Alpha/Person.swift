@@ -12,6 +12,7 @@ class Person {
     
     // Person class to create object upon user registration
     // class attributes
+    var uid : String
     var username: String
     var fullname: String
     var pw: String
@@ -24,7 +25,8 @@ class Person {
     //var tprotein : String
     
     // constructor defined
-    init(username: String, fullname: String, pw: String,sex:String) {
+    init(uid:String, username: String, fullname: String, pw: String,sex:String) {
+        self.uid = uid
         self.username = username
         self.fullname = fullname
         self.pw = pw
