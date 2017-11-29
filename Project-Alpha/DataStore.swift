@@ -182,6 +182,7 @@ class DataStore {
     func loadElog(){
         Elog = [Execriselog]()
         let uid = Auth.auth().currentUser?.uid
+        print(uid)
         ref.child("elog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get the top-level dictionary.
             let value = snapshot.value as? NSDictionary
@@ -219,6 +220,9 @@ class DataStore {
         
         // Save to Firebase.
         self.ref.child("people").child(person.uid).setValue(personRecord)
+        self.ref.child("setting").child(person.uid).setValue("")
+        self.ref.child("elog").child(person.uid).setValue("")
+        self.ref.child("foodlog").child(person.uid).setValue("")
         
         // Also save to our internal array, to stay in sync with what's in Firebase.
         people.append(person)

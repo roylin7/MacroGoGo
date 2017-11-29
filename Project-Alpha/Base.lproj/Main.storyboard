@@ -855,10 +855,10 @@
             </objects>
             <point key="canvasLocation" x="3330" y="768"/>
         </scene>
-        <!--View Controller-->
+        <!--Elogloader View Controller-->
         <scene sceneID="jBN-Ys-7d0">
             <objects>
-                <viewController id="5fj-kV-HfT" sceneMemberID="viewController">
+                <viewController id="5fj-kV-HfT" customClass="elogloaderViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qjY-hd-vm3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
