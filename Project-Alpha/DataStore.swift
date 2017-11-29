@@ -189,6 +189,7 @@ class DataStore {
         people.append(person)
     }
     
+    
     func addFoodlog(foodlog : FoodLog){
         let foodlogRecord = [
             "uid": foodlog.uid,
