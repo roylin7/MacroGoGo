@@ -149,11 +149,21 @@ class DataStore {
             if let foodlogs = value {
                 // Iterate over the person objects and store in our internal people array.
                 for f in foodlogs {
-                    let foodlogs = f.value as! [String:AnyObject]
+                    let foodlogs = f.value as! [String:String]
                     let uid = foodlogs["uid"]
+                    let year = foodlogs["year"]
+                    let month = foodlogs["month"]
+                    let day = foodlogs["day"]
+                    let foodname = foodlogs["foodname"]
+                    let carb = foodlogs["carb"]
+                    let fat = foodlogs["fat"]
+                    let protein = foodlogs["protein"]
                     
+                    let newfoodlog = FoodLog(uid: uid!, year: year!, month: month!, day: day!, foodname:
+                        foodname!, carb: carb!, fat: fat!, protein: protein!)
                     
-    
+                    self.foodlogs.append(newfoodlog)
+                    
                 }
             }
         }) { (error) in
@@ -185,6 +195,7 @@ class DataStore {
             "year": foodlog.year,
             "month": foodlog.month,
             "day": foodlog.day,
+            "foodname":foodlog.foodname,
             "carb": foodlog.carb,
             "fat": foodlog.fat,
             "protein":foodlog.protein
