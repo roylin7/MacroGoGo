@@ -524,7 +524,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m2l-fe-Czx">
-                                <rect key="frame" x="0.0" y="172.99999999999997" width="414" height="390.33333333333326"/>
+                                <rect key="frame" x="0.0" y="216.99999999999997" width="414" height="390.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZoN-CQ-4yt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -641,7 +641,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-rp-4Sm">
-                                <rect key="frame" x="0.0" y="88" width="84.666666666666671" height="55.333333333333343"/>
+                                <rect key="frame" x="0.0" y="132" width="84.666666666666671" height="55.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tk0-dl-drn">
                                         <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="55.333333333333336"/>
@@ -898,16 +898,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellid" id="NeU-IT-asM">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellid" textLabel="Reb-eF-iSs" detailTextLabel="fSo-2b-xNo" style="IBUITableViewCellStyleValue1" id="NeU-IT-asM">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NeU-IT-asM" id="olF-5a-dGY">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-Kj-nIf">
-                                            <rect key="frame" x="35" y="12" width="83" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Reb-eF-iSs">
+                                            <rect key="frame" x="20.000000000000004" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fSo-2b-xNo">
+                                            <rect key="frame" x="350" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -915,7 +922,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ByE-vb-rBw" kind="show" id="6Qh-zl-dL2"/>
+                                    <segue destination="ByE-vb-rBw" kind="show" identifier="elog" id="6Qh-zl-dL2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -929,10 +936,10 @@
             </objects>
             <point key="canvasLocation" x="4786.9565217391309" y="1660.5978260869567"/>
         </scene>
-        <!--View Controller-->
+        <!--Elog View Controller-->
         <scene sceneID="0tC-sb-28z">
             <objects>
-                <viewController id="ByE-vb-rBw" sceneMemberID="viewController">
+                <viewController id="ByE-vb-rBw" customClass="ElogViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XHF-qV-I7f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -955,6 +962,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="M6v-2y-hfB"/>
                     </view>
+                    <connections>
+                        <outlet property="elog" destination="Zv3-zL-gty" id="ysD-R4-M85"/>
+                        <outlet property="logname" destination="Iwz-77-HUd" id="Mmu-Za-hHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNG-Jj-yoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

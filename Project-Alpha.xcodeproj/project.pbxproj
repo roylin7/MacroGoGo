@@ -25,6 +25,7 @@
 		B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8A3281F9EAD98005659AE /* SignIn.swift */; };
 		B0AF0E871FA297090047F100 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF0E861FA297090047F100 /* Person.swift */; };
 		B0AF0E891FA29A6A0047F100 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF0E881FA29A6A0047F100 /* DataStore.swift */; };
+		B0CB5BD31FCF543D00656A41 /* ElogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CB5BD21FCF543D00656A41 /* ElogViewController.swift */; };
 		B0D21DC91F9EA76400C7F85A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */; };
 		B0D21DCE1F9EA76400C7F85A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D21DCC1F9EA76400C7F85A /* Main.storyboard */; };
 		B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DCF1F9EA76400C7F85A /* Project_Alpha.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		B0A8A3281F9EAD98005659AE /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		B0AF0E861FA297090047F100 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B0AF0E881FA29A6A0047F100 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B0CB5BD21FCF543D00656A41 /* ElogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElogViewController.swift; sourceTree = "<group>"; };
 		B0D21DC51F9EA76400C7F85A /* Project-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D21DCD1F9EA76400C7F85A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */,
 				AF0D04F21FCF416800D6FF87 /* ExerciseTableViewController.swift */,
 				B0D21DCC1F9EA76400C7F85A /* Main.storyboard */,
+				B0CB5BD21FCF543D00656A41 /* ElogViewController.swift */,
 				B033E7841FCF27250011E6E5 /* SaveFoodlogController.swift */,
 				6DF35C511FC5392A0062C80E /* MainScreen.swift */,
 				AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */,
@@ -300,6 +303,7 @@
 				B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */,
 				B0D21DE21F9EAAF200C7F85A /* Registration.swift in Sources */,
 				AF9EECB71FC4FF5E00186E6B /* MyTabBarController.swift in Sources */,
+				B0CB5BD31FCF543D00656A41 /* ElogViewController.swift in Sources */,
 				B0D21DDE1F9EA7B000C7F85A /* LaunchScreen.swift in Sources */,
 				B0EA9B731FC0FDA200A1872B /* FoodLog.swift in Sources */,
 				AF8E9FA81FC8D36C00946143 /* FoodLogViewController.swift in Sources */,
