@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 
 class DataStore {
@@ -18,7 +19,6 @@ class DataStore {
     private var ref: DatabaseReference
     private var people: [Person]!
     private var foodlogs:[FoodLog]!
-    private var settings:[infoSetting]!
     
     private init() {
         // Get a database reference.
@@ -217,8 +217,10 @@ class DataStore {
             "tprotein": info.tprotein
         ]
         self.ref.child("setting").child(info.uid).setValue(settingRecord)
-        
-        settings.append(info)
+    }
+    func loadSetting(){
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("setting").child("uid")
     }
 
 

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
 
 class Setting: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
@@ -137,6 +140,12 @@ class Setting: UIViewController, UITextFieldDelegate {
             self.present(self.alertController!, animated: true, completion:nil)
         }
         else{
+            let usereid = Auth.auth().currentUser?.uid
+            let newSetting = infoSetting(uid: usereid!, heightF: lblheightf.text!, heightI: lblheighti.text!, weight: lblweight.text!, tfat: lbltargetfat.text!, tcarb: targetcarbohydrate.text!, tprotein: lbltargetpotein.text!)
+            
+            DataStore.shared.setSetting(info: newSetting)
+            
+            
             self.alertController = UIAlertController(title: "Thank You", message: "Your information will be updated and saved.", preferredStyle: UIAlertControllerStyle.alert)
             
             
