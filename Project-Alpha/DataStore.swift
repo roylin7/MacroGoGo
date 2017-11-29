@@ -219,6 +219,17 @@ class DataStore {
         self.ref.child("setting").child(info.uid).setValue(settingRecord)
     }
     
+    func addELog(elog: Execriselog){
+        let elogRecord = [
+            "uid": elog.uid,
+            "logname": elog.logname,
+            "log": elog.log
+        ]
+        self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
+        
+    }
+    
+    
 
    
     
