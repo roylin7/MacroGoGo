@@ -17,6 +17,7 @@ class DataStore {
     
     private var ref: DatabaseReference
     private var people: [Person]!
+    private var foodlogs:[FoodLog]!
     
     private init() {
         // Get a database reference.
@@ -106,10 +107,6 @@ class DataStore {
         return oldpassword
     }
     
-    
-    
-    
-    
     func loadPeople() {
         // Start with an empty array.
         people = [Person]()
@@ -139,6 +136,28 @@ class DataStore {
         }
     }
     
+    func loadFoodlog(){
+        foodlogs = [FoodLog]()
+        ref.child("foodlogs").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get the top-level dictionary.
+            let value = snapshot.value as? NSDictionary
+            
+            if let foodlogs = value {
+                // Iterate over the person objects and store in our internal people array.
+                for f in foodlogs {
+                    let foodlogs = f.value as! [String:AnyObject]
+                    let uid = foodlogs["uid"]
+                    
+                    
+    
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
     func addPerson(person: Person) {
         // define array of key/value pairs to store for this person.
         let personRecord = [
@@ -147,7 +166,6 @@ class DataStore {
             "fName": person.fullname,
             "pw": person.pw,
             "sex": person.sex,
-           
         ]
         
         // Save to Firebase.
@@ -156,6 +174,22 @@ class DataStore {
         // Also save to our internal array, to stay in sync with what's in Firebase.
         people.append(person)
     }
+    
+    func addFoodlog(foodlog : FoodLog){
+        let foodlogRecord = [
+            "uid": foodlog.uid,
+            "year": foodlog.year,
+            "month": foodlog.month,
+            "day": foodlog.day,
+            "carb": foodlog.carb,
+            "fat": foodlog.fat,
+            "protein":foodlog.protein
+        ]
+        self.ref.child("foodlog").child(foodlog.uid).setValue(foodlogRecord)
+        
+        foodlogs.append(foodlog)
+    }
+
     
 }
 
