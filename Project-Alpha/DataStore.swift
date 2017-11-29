@@ -192,17 +192,16 @@ class DataStore {
     
     
     func addFoodlog(foodlog : FoodLog){
+        let date = foodlog.year + "-" + foodlog.month + "-" + foodlog.day
         let foodlogRecord = [
             "uid": foodlog.uid,
-            "year": foodlog.year,
-            "month": foodlog.month,
-            "day": foodlog.day,
+            "date":date,
             "foodname":foodlog.foodname,
             "carb": foodlog.carb,
             "fat": foodlog.fat,
             "protein":foodlog.protein
         ]
-        self.ref.child("foodlog").child(foodlog.uid).setValue(foodlogRecord)
+        self.ref.child("foodlog").child(foodlog.uid).child(date).child(foodlog.foodname).setValue(foodlogRecord)
         
         foodlogs.append(foodlog)
     }
