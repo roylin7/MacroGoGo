@@ -129,12 +129,9 @@ class DataStore {
                     let fName = person["fName"]
                     let pw = person["pw"]
                     let sex = person["sex"]
-<<<<<<< HEAD
                     
                     let newPerson = Person(uid:uid! as! String ,username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
-=======
-                    let newPerson = Person(username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
->>>>>>> master
+
                     self.people.append(newPerson)
                 }
             }
