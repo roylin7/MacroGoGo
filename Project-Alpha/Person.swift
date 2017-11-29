@@ -17,12 +17,6 @@ class Person {
     var fullname: String
     var pw: String
     var sex: String
-    //var heightF: String
-    //var heightI: String
-    //var weight : String
-    //var tfat : String
-    //var tcarb : String
-    //var tprotein : String
     
     // constructor defined
     init(uid:String, username: String, fullname: String, pw: String,sex:String) {
@@ -30,13 +24,7 @@ class Person {
         self.username = username
         self.fullname = fullname
         self.pw = pw
-        self.sex = sex
-        //self.heightF = heightF
-        //self.heightI = heightI
-        //self.weight = weight
-        //self.tfat = tfat
-        //self.tcarb = tcarb
-        //self.tprotein = tprotein
+        self.sex = sex        
     }
     
 }

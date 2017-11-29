@@ -218,11 +218,10 @@ class DataStore {
         ]
         self.ref.child("setting").child(info.uid).setValue(settingRecord)
     }
-    func loadSetting(){
-        let uid = Auth.auth().currentUser?.uid
-        ref.child("setting").child("uid")
-    }
+    
 
+   
+    
 
     
 }
