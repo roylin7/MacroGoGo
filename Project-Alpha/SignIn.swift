@@ -25,8 +25,7 @@ class SignIn: UIViewController {
         // page header
         DataStore.shared.loadPeople()
         self.title = "Sign-In"
-        print("username",lblusername.text!)
-        print("pw",lblpw.text!)
+      
 
         // Do any additional setup after loading the view.
     }

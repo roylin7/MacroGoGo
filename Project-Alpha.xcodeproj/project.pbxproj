@@ -12,6 +12,7 @@
 		6DA109CF1FA9525E001871FA /* macro-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA109CE1FA9525E001871FA /* macro-logo.png */; };
 		6DF35C521FC5392A0062C80E /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF35C511FC5392A0062C80E /* MainScreen.swift */; };
 		AF0422431FC9830500507F57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0422421FC9830500507F57 /* CameraViewController.swift */; };
+		AF13EB9F1FCE192A00EC9D55 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13EB9E1FCE192A00EC9D55 /* LogViewController.swift */; };
 		AF8E9FA61FC8D06900946143 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E9FA51FC8D06900946143 /* CustomCell.swift */; };
 		AF8E9FA81FC8D36C00946143 /* FoodLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */; };
 		AF9EECB71FC4FF5E00186E6B /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */; };
@@ -40,6 +41,7 @@
 		6DF35C511FC5392A0062C80E /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0422421FC9830500507F57 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AF13EB9E1FCE192A00EC9D55 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		AF8E9FA51FC8D06900946143 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogViewController.swift; sourceTree = "<group>"; };
 		AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				B0AF0E861FA297090047F100 /* Person.swift */,
 				B0AF0E881FA29A6A0047F100 /* DataStore.swift */,
 				AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */,
+				AF13EB9E1FCE192A00EC9D55 /* LogViewController.swift */,
 				B0A8A3281F9EAD98005659AE /* SignIn.swift */,
 				B0D21DC81F9EA76400C7F85A /* AppDelegate.swift */,
 				B0D21DCC1F9EA76400C7F85A /* Main.storyboard */,
@@ -279,6 +282,7 @@
 				6DF35C521FC5392A0062C80E /* MainScreen.swift in Sources */,
 				AF8E9FA61FC8D06900946143 /* CustomCell.swift in Sources */,
 				B0AF0E891FA29A6A0047F100 /* DataStore.swift in Sources */,
+				AF13EB9F1FCE192A00EC9D55 /* LogViewController.swift in Sources */,
 				B0AF0E871FA297090047F100 /* Person.swift in Sources */,
 				B0A8A3291F9EAD98005659AE /* SignIn.swift in Sources */,
 				B0D21DE21F9EAAF200C7F85A /* Registration.swift in Sources */,
