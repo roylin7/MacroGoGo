@@ -308,7 +308,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnlogin:" destination="2Pm-Pl-8A8" eventType="touchUpInside" id="gl0-wG-Xxy"/>
                                             <segue destination="5Ef-oK-mQI" kind="show" id="m2L-lS-GtW"/>
                                         </connections>
                                     </button>
@@ -1106,6 +1105,7 @@
         <image name="macro-logo.png" width="738" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4UW-rF-qdI"/>
         <segue reference="65X-Zf-NMB"/>
         <segue reference="A5h-gG-NCJ"/>
     </inferredMetricsTieBreakers>
