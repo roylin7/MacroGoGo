@@ -101,6 +101,12 @@ class DataStore {
         let person = people[place]
         print(person)
         self.ref.child("people").child(person.uid).updateChildValues(["pw":password])
+        Auth.auth().signIn(withEmail: username, password: password) { (user, error) in
+            if error != nil{
+                print(error)
+                return
+            }
+        }
     }
     
     func getPassword(username: String) -> String {
