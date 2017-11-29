@@ -19,6 +19,7 @@ class DataStore {
     private var ref: DatabaseReference
     private var people: [Person]!
     private var foodlogs:[FoodLog]!
+    private var Elog:[Execriselog]!
     
     private init() {
         // Get a database reference.
@@ -29,6 +30,10 @@ class DataStore {
     // return number of users registered in datastore
     func count() -> Int {
         return people.count
+    }
+    
+    func Ecount() -> Int {
+        return Elog.count
     }
     
     // return specific user
@@ -90,11 +95,7 @@ class DataStore {
             return "username not found"
         }
     }
-    func exerciseLog(uid: String, text: String){
-        let exercise = self.ref.child("people").child(uid).child("Exerciselog1")
-        let log = exercise.childByAutoId().child("Log: ")
-        log.setValue(text)
-    }
+    
     
     func updatePassword(username: String, password: String) {
         let place = DataStore.shared.usernameIndex(username: username)
@@ -149,7 +150,7 @@ class DataStore {
     
     func loadFoodlog(){
         foodlogs = [FoodLog]()
-        ref.child("foodlogs").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("foodlog").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get the top-level dictionary.
             let value = snapshot.value as? NSDictionary
             
@@ -169,6 +170,32 @@ class DataStore {
                     
                     self.foodlogs.append(newfoodlog)
                    
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    func loadElog(){
+        Elog = [Execriselog]()
+        ref.child("elog").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get the top-level dictionary.
+            let value = snapshot.value as? NSDictionary
+            
+            if let elogs = value {
+                // Iterate over the person objects and store in our internal people array.
+                for e in elogs {
+                    let elog = e.value as! [String:String]
+                    let uid = elog["uid"]
+                    let log = elog["log"]
+                    let logName = elog["logname"]
+                    
+                    
+                    let newElog = Execriselog(uid: uid!, logname: logName!, log: log!)
+                    
+                    self.Elog.append(newElog)
+                    
                 }
             }
         }) { (error) in
