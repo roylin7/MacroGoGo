@@ -12,8 +12,7 @@ class ExerciseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DataStore.shared.loadElog()
+        
     }
 
     override func didReceiveMemoryWarning() {

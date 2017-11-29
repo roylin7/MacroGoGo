@@ -181,7 +181,8 @@ class DataStore {
     }
     func loadElog(){
         Elog = [Execriselog]()
-        ref.child("elog").observeSingleEvent(of: .value, with: { (snapshot) in
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("elog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get the top-level dictionary.
             let value = snapshot.value as? NSDictionary
             
