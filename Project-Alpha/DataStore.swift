@@ -99,7 +99,7 @@ class DataStore {
         let place = DataStore.shared.usernameIndex(username: username)
         let person = people[place]
         print(person)
-        self.ref.child("people").child(person.username).updateChildValues(["pw":password])
+        self.ref.child("people").child(person.uid).updateChildValues(["pw":password])
     }
     
     func getPassword(username: String) -> String {

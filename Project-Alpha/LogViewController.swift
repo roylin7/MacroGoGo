@@ -29,9 +29,9 @@ class LogViewController: UIViewController {
     
 
     @IBAction func saveText(_ sender: Any) {
-        let userID = Auth.auth().currentUser!.uid
-        print (userID)
-        DataStore.shared.exerciseLog(uid: userID, text: String (describing: logText))
+        let userId = Auth.auth().currentUser?.uid
+        print (userId)
+        DataStore.shared.exerciseLog(uid: userId!, text: String (describing: logText))
     }
     
 
