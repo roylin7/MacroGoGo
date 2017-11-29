@@ -87,9 +87,12 @@ class DataStore {
       
         else{
             return "username not found"
-            
-            
         }
+    }
+    func exerciseLog(uid: String, text: String){
+        let exercise = self.ref.child("people").child(uid).child("Exerciselog1")
+        let log = exercise.childByAutoId().child("Log: ")
+        log.setValue(text)
     }
     
     func updatePassword(username: String, password: String) {
@@ -126,8 +129,12 @@ class DataStore {
                     let fName = person["fName"]
                     let pw = person["pw"]
                     let sex = person["sex"]
+<<<<<<< HEAD
                     
                     let newPerson = Person(uid:uid! as! String ,username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
+=======
+                    let newPerson = Person(username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
+>>>>>>> master
                     self.people.append(newPerson)
                 }
             }
