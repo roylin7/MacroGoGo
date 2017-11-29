@@ -14,7 +14,6 @@ class LaunchScreen: UIViewController {
         super.viewDidLoad()
         // load datastore
         DataStore.shared.loadPeople()
-        DataStore.shared.loadElog()
 
         // Do any additional setup after loading the view.
     }

@@ -16,6 +16,7 @@ class ElogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataStore.shared.loadElog()
         setLabels()
         // Do any additional setup after loading the view.
     }

@@ -73,6 +73,7 @@ class LogViewController: UIViewController {
             self.alertController!.addAction(OKAction)
             
             self.present(self.alertController!, animated: true, completion:nil)
+            DataStore.shared.loadElog()
         }
         
         
