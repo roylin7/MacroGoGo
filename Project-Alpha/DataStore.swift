@@ -152,19 +152,17 @@ class DataStore {
                 for f in foodlogs {
                     let foodlogs = f.value as! [String:String]
                     let uid = foodlogs["uid"]
-                    let year = foodlogs["year"]
-                    let month = foodlogs["month"]
-                    let day = foodlogs["day"]
+                    let date = foodlogs["date"]
                     let foodname = foodlogs["foodname"]
                     let carb = foodlogs["carb"]
                     let fat = foodlogs["fat"]
                     let protein = foodlogs["protein"]
                     
-                    let newfoodlog = FoodLog(uid: uid!, year: year!, month: month!, day: day!, foodname:
+                    let newfoodlog = FoodLog(uid: uid!, date:date!,foodname:
                         foodname!, carb: carb!, fat: fat!, protein: protein!)
                     
                     self.foodlogs.append(newfoodlog)
-                    
+                   
                 }
             }
         }) { (error) in
@@ -192,18 +190,17 @@ class DataStore {
     
     
     func addFoodlog(foodlog : FoodLog){
-        let date = foodlog.year + "-" + foodlog.month + "-" + foodlog.day
         let foodlogRecord = [
             "uid": foodlog.uid,
-            "date":date,
+            "date":foodlog.date,
             "foodname":foodlog.foodname,
             "carb": foodlog.carb,
             "fat": foodlog.fat,
             "protein":foodlog.protein
         ]
-        self.ref.child("foodlog").child(foodlog.uid).child(date).child(foodlog.foodname).setValue(foodlogRecord)
+        self.ref.child("foodlog").child(foodlog.uid).child(foodlog.date).child(foodlog.foodname).setValue(foodlogRecord)
         
-        foodlogs.append(foodlog)
+        
     }
     func setSetting(info: infoSetting){
         let settingRecord = [
@@ -227,6 +224,8 @@ class DataStore {
         self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
         
     }
+    
+    
     
     
 
