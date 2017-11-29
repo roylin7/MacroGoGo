@@ -40,7 +40,9 @@ class DataStore {
     func getPerson(index: Int) -> Person {
         return people[index]
     }
-    
+    func getElog(index: Int) -> Execriselog {
+        return Elog[index]
+    }
     // get list of users by name
     func getUserNameList() -> [String] {
         var usernamelist = [String]()

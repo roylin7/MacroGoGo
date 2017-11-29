@@ -30,5 +30,16 @@ class ExerciseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataStore.shared.Ecount()
     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
+        
+        // Configure the cell...
+        let elog = DataStore.shared.getElog(index: indexPath.row)
+        
+        cell.textLabel?.text = elog.logname
+        
+        
+        return cell
+    }
 
 }
