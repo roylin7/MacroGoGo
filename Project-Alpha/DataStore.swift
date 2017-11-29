@@ -18,6 +18,7 @@ class DataStore {
     private var ref: DatabaseReference
     private var people: [Person]!
     private var foodlogs:[FoodLog]!
+    private var settings:[infoSetting]!
     
     private init() {
         // Get a database reference.
@@ -205,6 +206,21 @@ class DataStore {
         
         foodlogs.append(foodlog)
     }
+    func setSetting(info: infoSetting){
+        let settingRecord = [
+            "uid" : info.uid,
+            "heightF" : info.heightF,
+            "heightI" : info.heightI,
+            "weight": info.weight,
+            "tfat": info.tfat,
+            "tcarb": info.tcarb,
+            "tprotein": info.tprotein
+        ]
+        self.ref.child("setting").child(info.uid).setValue(settingRecord)
+        
+        settings.append(info)
+    }
+
 
     
 }

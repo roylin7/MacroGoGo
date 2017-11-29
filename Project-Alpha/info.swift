@@ -8,7 +8,7 @@
 
 import Foundation
 
-class info{
+class infoSetting{
     var uid : String
     var heightF: String
     var heightI: String
