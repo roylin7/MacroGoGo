@@ -114,11 +114,11 @@ class DataStore {
         var i = 0
         while i < num {
             let foodlog = DataStore.shared.getFoodlog(index: i)
-            if dateList.contains(foodlog.date){
+            if dateList.contains(getDate(foodlog: foodlog)){
                 i += 1
             }
             else{
-                dateList.append(foodlog.date)
+                dateList.append(getDate(foodlog: foodlog))
                 i += 1
             }
             
@@ -126,7 +126,7 @@ class DataStore {
         return dateList
     }
         
-    func getDataListCount() -> Int{
+    func getDateListCount() -> Int{
         return self.getDateList(foologs: DataStore.shared.getFoodlogs()).count
     }
     
@@ -136,7 +136,7 @@ class DataStore {
         var i = 0
         while i < num{
             let foodlog = DataStore.shared.getFoodlog(index:num)
-            if foodlog.date == date{
+            if getDate(foodlog: foodlog) == date{
                 foodlogbydate.append(foodlog)
                 i += 1
             }
@@ -163,6 +163,14 @@ class DataStore {
             }
         }
     }
+    
+    func getDate(foodlog :FoodLog) -> String{
+        let date = foodlog.date
+        let index =  date.index(date.startIndex, offsetBy: 11)
+        let substring = date[..<index]
+        return String(substring)
+    }
+    
     
     func getPassword(username: String) -> String {
   
