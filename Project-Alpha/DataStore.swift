@@ -205,11 +205,26 @@ class DataStore {
     func loadFoodlog(){
         foodlogs = [FoodLog]()
         let uid = Auth.auth().currentUser?.uid
-        ref.child("foodlog").child(uid!).child("date").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("foodlog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get the top-level dictionary.
-            let snapshots = snapshot.value
-           
-            print (snapshot)
+            let value = snapshot.value as? NSDictionary
+            
+            if let foodlog = value {
+                for f in foodlog{
+                    let fl = f.value as! [String:String]
+                    let uid = fl["uid"]
+                    let date = fl["date"]
+                    let foodname = fl["name"]
+                    let carb = fl["carb"]
+                    let protein = fl["protein"]
+                    let fat = fl["fat"]
+                    
+                    let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!, fat: fat!, protein: protein!)
+                    
+                    self.foodlogs.append(newfoodlog)
+                }
+            }
+            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -274,7 +289,7 @@ class DataStore {
             "fat": foodlog.fat,
             "protein":foodlog.protein
         ]
-        self.ref.child("foodlog").child(foodlog.uid).child("date").child(foodlog.date).child(foodlog.foodname).setValue(foodlogRecord)
+        self.ref.child("foodlog").child(foodlog.uid).child(foodlog.date).setValue(foodlogRecord)
         
         
     }
