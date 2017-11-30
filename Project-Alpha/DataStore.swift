@@ -214,7 +214,7 @@ class DataStore {
                     let fl = f.value as! [String:String]
                     let uid = fl["uid"]
                     let date = fl["date"]
-                    let foodname = fl["name"]
+                    let foodname = fl["foodname"]
                     let carb = fl["carb"]
                     let protein = fl["protein"]
                     let fat = fl["fat"]
