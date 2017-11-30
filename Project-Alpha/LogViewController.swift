@@ -32,7 +32,7 @@ class LogViewController: UIViewController {
     @IBAction func saveText(_ sender: Any) {
         let uid = Auth.auth().currentUser?.uid
         if logName.text! == "" && logText.text! == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please fill in Log Title and Text'", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please fill in Logname and Text'", preferredStyle: UIAlertControllerStyle.alert)
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 print("Ok Button Pressed 1");
@@ -63,8 +63,8 @@ class LogViewController: UIViewController {
         }
         
         else {
-            let elog = ExerciseLog(uid: uid!, logname: logName.text!, log: logText.text!)
-            DataStore.shared.addElog(elog: elog)
+            let elog = Execriselog(uid: uid!, logname: logName.text!, log: logText.text!)
+            DataStore.shared.addELog(elog: elog)
             self.alertController = UIAlertController(title: "Thank You", message: "Saved", preferredStyle: UIAlertControllerStyle.alert)
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in

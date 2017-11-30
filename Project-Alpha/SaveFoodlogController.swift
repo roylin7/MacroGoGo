@@ -1,5 +1,5 @@
 //
-//  SaveFoodLogController.swift
+//  SaveFoodlogController.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/29/17.
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SaveFoodLogController: UIViewController {
+class SaveFoodlogController: UIViewController {
    
     var alertController:UIAlertController? = nil
     @IBOutlet weak var foodname: UITextField!
@@ -30,7 +30,7 @@ class SaveFoodLogController: UIViewController {
     }
     @IBAction func savefoodlog(_ sender: Any) {
         if foodname.text! == "" || fat.text! == "" || carb.text! == "" || protein.text == "" {
-            self.alertController = UIAlertController(title: "Error", message: "Please complete 'meal name'/fat/carb/protein ", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please complete 'foodname'/fat/carb/protein ", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -52,7 +52,7 @@ class SaveFoodLogController: UIViewController {
             
             DataStore.shared.addFoodlog(foodlog: newFoodLog)
             
-            self.alertController = UIAlertController(title: "Thank you ", message: "Saved ", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Thank you ", message: "saved ", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in

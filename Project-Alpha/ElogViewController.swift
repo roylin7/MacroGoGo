@@ -1,5 +1,5 @@
 //
-//  ExLogViewController.swift
+//  ElogViewController.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/29/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ExLogViewController: UIViewController {
+class ElogViewController: UIViewController {
 
-    var elogs : ExerciseLog!
+    var elogs : Execriselog!
     @IBOutlet weak var logname: UILabel!
     @IBOutlet weak var elog: UILabel!
 

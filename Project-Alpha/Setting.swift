@@ -1,5 +1,5 @@
 //
-//  Settings.swift
+//  Setting.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 10/31/17.
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 
 
-class Settings: UIViewController, UITextFieldDelegate {
+class Setting: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Settings"
@@ -141,7 +141,7 @@ class Settings: UIViewController, UITextFieldDelegate {
         }
         else{
             let usereid = Auth.auth().currentUser?.uid
-            let newSetting = Info(uid: usereid!, heightF: lblheightf.text!, heightI: lblheighti.text!, weight: lblweight.text!, tfat: lbltargetfat.text!, tcarb: targetcarbohydrate.text!, tprotein: lbltargetpotein.text!)
+            let newSetting = infoSetting(uid: usereid!, heightF: lblheightf.text!, heightI: lblheighti.text!, weight: lblweight.text!, tfat: lbltargetfat.text!, tcarb: targetcarbohydrate.text!, tprotein: lbltargetpotein.text!)
             
             DataStore.shared.setSetting(info: newSetting)
             

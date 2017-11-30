@@ -27,7 +27,7 @@ class ExerciseTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataStore.shared.eCount()
+        return DataStore.shared.Ecount()
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
@@ -44,7 +44,7 @@ class ExerciseTableViewController: UITableViewController {
         if segue.identifier == "elog" {
             // Get the table view row that was tapped.
             if let indexPath = tableView.indexPathForSelectedRow {
-                let vc = segue.destination as! ExLogViewController
+                let vc = segue.destination as! ElogViewController
                 // Pass the selected data model object to the destination view controller.
                 vc.elogs = DataStore.shared.getElog(index: indexPath.row)
                 // Set the navigation bar back button text.

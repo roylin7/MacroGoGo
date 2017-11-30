@@ -1,5 +1,5 @@
 //
-//  ExerciseLog.swift
+//  Exerciselog.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/29/17.
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class ExerciseLog {
+class Execriselog{
     var logname : String
     var log : String
     var uid : String
