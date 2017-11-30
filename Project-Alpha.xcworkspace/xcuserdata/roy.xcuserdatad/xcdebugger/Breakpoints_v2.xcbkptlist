@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project-Alpha/DataStore.swift"
-            timestampString = "533696765.74896"
+            timestampString = "533768872.498139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "loadElog()"
             landmarkType = "7">
             <Locations>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project-Alpha/DataStore.swift"
-            timestampString = "533696765.749042"
+            timestampString = "533768872.49854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "loadElog()"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "loadFoodlog()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project-Alpha/loadFoodlogViewController.swift"
-            timestampString = "533696765.749112"
+            timestampString = "533768872.498808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
