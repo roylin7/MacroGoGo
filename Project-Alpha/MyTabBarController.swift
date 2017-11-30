@@ -28,7 +28,7 @@ class MyTabBarController: UITabBarController {
         let storyboard = UIStoryboard(name: "Main", bundle:nil)
         
         let vc1 = storyboard.instantiateViewController(withIdentifier: "vc1") as? MainScreen
-        let vc2 = storyboard.instantiateViewController(withIdentifier: "vc2") as? Setting
+        let vc2 = storyboard.instantiateViewController(withIdentifier: "vc2") as? Settings
         
         // Get each tab's image from the Assets.xcassets file.
         let image1 = UIImage(named: "tab1")
