@@ -1,5 +1,5 @@
 //
-//  info.swift
+//  Info.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/28/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class infoSetting{
+class Info {
     var uid : String
     var heightF: String
     var heightI: String

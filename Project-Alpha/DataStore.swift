@@ -18,8 +18,8 @@ class DataStore {
     
     private var ref: DatabaseReference
     private var people: [Person]!
-    private var foodlogs:[FoodLog]!
-    private var Elog:[Execriselog]!
+    private var foodLog:[FoodLog]!
+    private var eLog:[ExerciseLog]!
     
     private init() {
         // Get a database reference.
@@ -28,12 +28,12 @@ class DataStore {
     }
     
     // return number of users registered in datastore
-    func count() -> Int {
+    func peopleCount() -> Int {
         return people.count
     }
     
-    func Ecount() -> Int {
-        return Elog.count
+    func eCount() -> Int {
+        return eLog.count
     }
     
     func Fcount() -> Int{
@@ -44,8 +44,8 @@ class DataStore {
     func getPerson(index: Int) -> Person {
         return people[index]
     }
-    func getElog(index: Int) -> Execriselog {
-        return Elog[index]
+    func getElog(index: Int) -> ExerciseLog {
+        return eLog[index]
     }
     
     func getFoodlog(index: Int) -> FoodLog{
@@ -55,7 +55,7 @@ class DataStore {
     // get list of users by name
     func getUserNameList() -> [String] {
         var usernamelist = [String]()
-        let num: Int = DataStore.shared.count()
+        let num: Int = DataStore.shared.peopleCount()
         var i = 0
         while i < num {
             let person = DataStore.shared.getPerson(index: i)
@@ -104,7 +104,7 @@ class DataStore {
         }
       
         else{
-            return "username not found"
+            return "Username not found"
         }
     }
     
@@ -202,6 +202,7 @@ class DataStore {
         }
     }
     
+<<<<<<< HEAD
     func loadFoodlog(){
         foodlogs = [FoodLog]()
         let uid = Auth.auth().currentUser?.uid
@@ -209,24 +210,29 @@ class DataStore {
     
             
             
+=======
+    func loadFoodLog(){
+        foodLog = [FoodLog]()
+        ref.child("foodlog").observeSingleEvent(of: .value, with: { (snapshot) in
+>>>>>>> master
             // Get the top-level dictionary.
             let value = snapshot.value as? NSDictionary
             
             if let foodlogs = value {
                 // Iterate over the person objects and store in our internal people array.
                 for f in foodlogs {
-                    let foodlogs = f.value as! [String:String]
-                    let uid = foodlogs["uid"]
-                    let date = foodlogs["date"]
-                    let foodname = foodlogs["foodname"]
-                    let carb = foodlogs["carb"]
-                    let fat = foodlogs["fat"]
-                    let protein = foodlogs["protein"]
+                    let foodlog = f.value as! [String:String]
+                    let uid = foodlog["uid"]
+                    let date = foodlog["date"]
+                    let foodname = foodlog["foodname"]
+                    let carb = foodlog["carb"]
+                    let fat = foodlog["fat"]
+                    let protein = foodlog["protein"]
                     
-                    let newfoodlog = FoodLog(uid: uid!, date:date!,foodname:
+                    let newFoodLog = FoodLog(uid: uid!, date:date!,foodname:
                         foodname!, carb: carb!, fat: fat!, protein: protein!)
                     
-                    self.foodlogs.append(newfoodlog)
+                    self.foodLog.append(newFoodLog)
                    
                 }
             }
@@ -236,7 +242,7 @@ class DataStore {
         
     }
     func loadElog(){
-        Elog = [Execriselog]()
+        eLog = [ExerciseLog]()
         let uid = Auth.auth().currentUser?.uid
         print(uid)
         ref.child("elog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -252,9 +258,9 @@ class DataStore {
                     let logName = elog["logname"]
                     
                     
-                    let newElog = Execriselog(uid: uid!, logname: logName!, log: log!)
+                    let newElog = ExerciseLog(uid: uid!, logname: logName!, log: log!)
                     
-                    self.Elog.append(newElog)
+                    self.eLog.append(newElog)
                     
                 }
             }
@@ -298,7 +304,7 @@ class DataStore {
         
         
     }
-    func setSetting(info: infoSetting){
+    func setSetting(info: Info){
         let settingRecord = [
             "uid" : info.uid,
             "heightF" : info.heightF,
@@ -311,13 +317,13 @@ class DataStore {
         self.ref.child("setting").child(info.uid).setValue(settingRecord)
     }
     
-    func addELog(elog: Execriselog){
-        let elogRecord = [
+    func addElog(elog: ExerciseLog){
+        let eLogRecord = [
             "uid": elog.uid,
             "logname": elog.logname,
             "log": elog.log
         ]
-        self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
+        self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(eLogRecord)
         
     }
     

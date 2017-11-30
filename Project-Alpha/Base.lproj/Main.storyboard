@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHr-cz-j8C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHr-cz-j8C">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -394,14 +394,22 @@
                                     <segue destination="QK1-xd-Ln0" kind="show" id="m9u-EO-zdG"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lo-rT-nZM">
                                 <rect key="frame" x="25" y="134" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Foodlog section"/>
+=======
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lo-rT-nZM" userLabel="Write food log">
+                                <rect key="frame" x="31" y="134" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Write food log"/>
+>>>>>>> master
                                 <connections>
                                     <segue destination="X0m-pO-R6U" kind="show" id="JZr-qG-L14"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cix-aO-QUe">
                                 <rect key="frame" x="35" y="144" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -411,6 +419,8 @@
                                 <rect key="frame" x="110" y="283" width="182" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+=======
+>>>>>>> master
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufh-HH-ciK">
                                 <rect key="frame" x="55" y="546" width="49" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -419,6 +429,10 @@
                                     <segue destination="hD5-NH-kSc" kind="show" id="jgQ-ba-pK0"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="macro-apple.png" translatesAutoresizingMaskIntoConstraints="NO" id="Syb-MA-90V">
+                                <rect key="frame" x="137" y="307" width="141" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1960784314" green="0.0" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="bD4-93-6Y0"/>
@@ -432,6 +446,7 @@
             </objects>
             <point key="canvasLocation" x="4695.652173913044" y="-637.5"/>
         </scene>
+<<<<<<< HEAD
         <!--Load Foodlog View Controller-->
         <scene sceneID="1kc-hI-7Nu">
             <objects>
@@ -510,9 +525,12 @@
             <point key="canvasLocation" x="6046" y="-1785"/>
         </scene>
         <!--Save Foodlog Controller-->
+=======
+        <!--Save Food Log Controller-->
+>>>>>>> master
         <scene sceneID="cL4-1r-xNM">
             <objects>
-                <viewController id="ufD-4v-c1l" customClass="SaveFoodlogController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ufD-4v-c1l" customClass="SaveFoodLogController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VgN-cv-LmX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -545,22 +563,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Foodname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-Qo-eUb">
-                                <rect key="frame" x="54" y="161" width="103" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fat (g)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4E-Uf-bFS">
+                                <rect key="frame" x="54" y="335" width="54" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fat (g)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4E-Uf-bFS">
-                                <rect key="frame" x="54" y="337" width="54" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="protein (g)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-SI-sWe">
-                                <rect key="frame" x="54" y="488" width="81" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protein (g)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-SI-sWe">
+                                <rect key="frame" x="54" y="487" width="81" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -569,20 +580,28 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61h-cV-b1H">
                                 <rect key="frame" x="165" y="625" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="savefoodlog:" destination="ufD-4v-c1l" eventType="touchUpInside" id="YZJ-IN-67N"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="carb (g)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-11-84v">
-                                <rect key="frame" x="54" y="409" width="63" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carb (g)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-11-84v">
+                                <rect key="frame" x="54" y="412" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-Qo-eUb">
+                                <rect key="frame" x="54" y="159" width="103" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.28362475339999998" green="0.051068933589999997" blue="0.33901392489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.0" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="czq-4R-aTA"/>
                     </view>
                     <connections>
@@ -725,17 +744,11 @@
                                 <rect key="frame" x="0.0" y="132" width="84.666666666666671" height="55.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tk0-dl-drn">
-                                        <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="55.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="55.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ui-s0-kUi">
-                                                <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="55.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usv-Fb-YLv">
-                                                <rect key="frame" x="0.0" y="23.000000000000004" width="84.666666666666671" height="32.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -747,8 +760,15 @@
                                     <constraint firstAttribute="height" constant="55.329999999999998" id="rQf-z0-Znf"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usv-Fb-YLv">
+                                <rect key="frame" x="0.0" y="177" width="181" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.28362475339999998" green="0.051068933589999997" blue="0.33901392489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.0" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="m2l-fe-Czx" firstAttribute="top" secondItem="OAW-rp-4Sm" secondAttribute="bottom" constant="29.670000000000002" id="Od8-Nv-gOU"/>
                             <constraint firstItem="ZSN-xy-4Ul" firstAttribute="trailing" secondItem="OAW-rp-4Sm" secondAttribute="trailing" constant="329.32999999999998" id="QeW-zf-fqG"/>
@@ -791,7 +811,7 @@
         <!--Settings-->
         <scene sceneID="wLn-aR-BQa">
             <objects>
-                <viewController storyboardIdentifier="vc2" id="mTW-an-p7h" customClass="Setting" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" id="mTW-an-p7h" customClass="Settings" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqs-7u-keQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -936,10 +956,10 @@
             </objects>
             <point key="canvasLocation" x="3330" y="768"/>
         </scene>
-        <!--Elogloader View Controller-->
+        <!--Ex Log Loader View Controller-->
         <scene sceneID="jBN-Ys-7d0">
             <objects>
-                <viewController id="5fj-kV-HfT" customClass="elogloaderViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5fj-kV-HfT" customClass="ExLogLoaderViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qjY-hd-vm3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1017,10 +1037,10 @@
             </objects>
             <point key="canvasLocation" x="4786.9565217391309" y="1660.5978260869567"/>
         </scene>
-        <!--Elog View Controller-->
+        <!--Ex Log View Controller-->
         <scene sceneID="0tC-sb-28z">
             <objects>
-                <viewController id="ByE-vb-rBw" customClass="ElogViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ByE-vb-rBw" customClass="ExLogViewController" customModule="Project_Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XHF-qV-I7f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1060,8 +1080,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-Ju-UcE">
-                                <rect key="frame" x="58" y="142" width="83" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-Ju-UcE">
+                                <rect key="frame" x="70" y="143" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1074,7 +1094,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-DI-DDa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log Text:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-DI-DDa">
                                 <rect key="frame" x="70" y="292" width="83" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1084,20 +1104,21 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3F-Fq-oXI">
                                 <rect key="frame" x="162" y="464" width="65" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveText:" destination="n1D-vP-aUc" eventType="touchDown" id="5sE-oi-cci"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-oI-f65">
-                                <rect key="frame" x="136" y="292" width="240" height="128"/>
+                                <rect key="frame" x="154" y="292" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.28362475339999998" green="0.051068933589999997" blue="0.33901392489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.0" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="jce-6C-axH"/>
                     </view>
                     <connections>
@@ -1159,10 +1180,10 @@
             </objects>
             <point key="canvasLocation" x="104" y="7.1964017991004505"/>
         </scene>
-        <!--Exercise log-->
+        <!--elog-->
         <scene sceneID="dy5-az-N8T">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qYu-2J-x4G" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qYu-2J-x4G" userLabel="elog" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Exercise log" image="item4" id="RA0-VO-7aN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lsv-EX-VKD">
@@ -1187,7 +1208,11 @@
         <image name="macro-logo.png" width="738" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="65X-Zf-NMB"/>
+=======
+        <segue reference="c44-q1-5Or"/>
+>>>>>>> master
         <segue reference="A5h-gG-NCJ"/>
     </inferredMetricsTieBreakers>
 </document>
