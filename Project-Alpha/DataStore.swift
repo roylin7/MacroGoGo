@@ -36,6 +36,10 @@ class DataStore {
         return Elog.count
     }
     
+    func Fcount() -> Int{
+        return foodlogs.count
+    }
+    
     // return specific user
     func getPerson(index: Int) -> Person {
         return people[index]
@@ -43,6 +47,11 @@ class DataStore {
     func getElog(index: Int) -> Execriselog {
         return Elog[index]
     }
+    
+    func getFoodlog(index: Int) -> FoodLog{
+        return foodlogs[index]
+    }
+    
     // get list of users by name
     func getUserNameList() -> [String] {
         var usernamelist = [String]()
@@ -86,6 +95,7 @@ class DataStore {
         }
         
     }
+
     func getUsername(username: String) -> String{
         var usernamelist1 = DataStore.shared.getUserNameList()
    
@@ -98,6 +108,48 @@ class DataStore {
         }
     }
     
+    func getDateList(foologs: [FoodLog]) -> [String] {
+        var dateList = [String]()
+        let num: Int = DataStore.shared.Fcount()
+        var i = 0
+        while i < num {
+            let foodlog = DataStore.shared.getFoodlog(index: i)
+            if dateList.contains(foodlog.date){
+                i += 1
+            }
+            else{
+                dateList.append(foodlog.date)
+                i += 1
+            }
+            
+        }
+        return dateList
+    }
+        
+    func getDataListCount() -> Int{
+        return self.getDateList(foologs: DataStore.shared.getFoodlogs()).count
+    }
+    
+    func getFoodlogsByDate(date:String) -> [FoodLog]{
+        var foodlogbydate = [FoodLog]()
+        let num: Int = DataStore.shared.Fcount()
+        var i = 0
+        while i < num{
+            let foodlog = DataStore.shared.getFoodlog(index:num)
+            if foodlog.date == date{
+                foodlogbydate.append(foodlog)
+                i += 1
+            }
+            else {
+                i += 1
+            }
+        }
+        return foodlogbydate
+    }
+    
+    func getFoodlogs() -> [FoodLog]{
+        return foodlogs
+    }
     
     func updatePassword(username: String, password: String) {
         let place = DataStore.shared.usernameIndex(username: username)
@@ -152,7 +204,11 @@ class DataStore {
     
     func loadFoodlog(){
         foodlogs = [FoodLog]()
-        ref.child("foodlog").observeSingleEvent(of: .value, with: { (snapshot) in
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("foodlog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+    
+            
+            
             // Get the top-level dictionary.
             let value = snapshot.value as? NSDictionary
             

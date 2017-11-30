@@ -43,7 +43,7 @@ class SaveFoodlogController: UIViewController {
         else {
             let currentDate = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
+            formatter.dateFormat = "MM-dd-YYYY"
             
             let date = formatter.string(from: currentDate)
             let uid = Auth.auth().currentUser?.uid
