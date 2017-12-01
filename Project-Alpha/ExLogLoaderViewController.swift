@@ -1,5 +1,5 @@
 //
-//  elogloaderViewController.swift
+//  ExLogLoaderViewController.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/29/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class elogloaderViewController: UIViewController {
+class ExLogLoaderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

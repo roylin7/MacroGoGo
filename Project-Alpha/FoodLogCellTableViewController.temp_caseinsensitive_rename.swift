@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FoodlogcellTableViewController: UITableViewController {
+class FoodLogCellTableViewController: UITableViewController {
 
     var flogs : [FoodLog]!
     override func viewDidLoad() {

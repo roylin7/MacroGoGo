@@ -19,7 +19,7 @@ class DataStore {
     private var ref: DatabaseReference
     private var people: [Person]!
     private var foodlogs:[FoodLog]!
-    private var Elog:[Execriselog]!
+    private var Elog:[ExerciseLog]!
     
     private init() {
         // Get a database reference.
@@ -44,7 +44,7 @@ class DataStore {
     func getPerson(index: Int) -> Person {
         return people[index]
     }
-    func getElog(index: Int) -> Execriselog {
+    func getElog(index: Int) -> ExerciseLog {
         return Elog[index]
     }
     
@@ -104,7 +104,7 @@ class DataStore {
         }
       
         else{
-            return "username not found"
+            return "Username not found in system"
         }
     }
     
@@ -164,7 +164,7 @@ class DataStore {
         }
     }
     
-    func getDate(foodlog :FoodLog) -> String{
+    func getDate(foodlog: FoodLog) -> String{
         let date = foodlog.date
         let index =  date.index(date.startIndex, offsetBy: 11)
         let substring = date[..<index]
@@ -239,7 +239,7 @@ class DataStore {
         
     }
     func loadElog(){
-        Elog = [Execriselog]()
+        Elog = [ExerciseLog]()
         let uid = Auth.auth().currentUser?.uid
         print(uid)
         ref.child("elog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -255,7 +255,7 @@ class DataStore {
                     let logName = elog["logname"]
                     
                     
-                    let newElog = Execriselog(uid: uid!, logname: logName!, log: log!)
+                    let newElog = ExerciseLog(uid: uid!, logname: logName!, log: log!)
                     
                     self.Elog.append(newElog)
                     
@@ -301,7 +301,7 @@ class DataStore {
         
         
     }
-    func setSetting(info: infoSetting){
+    func setSetting(info: InfoSetting){
         let settingRecord = [
             "uid" : info.uid,
             "heightF" : info.heightF,
@@ -314,7 +314,7 @@ class DataStore {
         self.ref.child("setting").child(info.uid).setValue(settingRecord)
     }
     
-    func addELog(elog: Execriselog){
+    func addELog(elog: ExerciseLog){
         let elogRecord = [
             "uid": elog.uid,
             "logname": elog.logname,

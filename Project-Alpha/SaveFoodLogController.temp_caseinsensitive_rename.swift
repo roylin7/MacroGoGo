@@ -1,5 +1,5 @@
 //
-//  SaveFoodlogController.swift
+//  SaveFoodLogController.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/29/17.
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SaveFoodlogController: UIViewController {
+class SaveFoodLogController: UIViewController {
    
     var alertController:UIAlertController? = nil
     @IBOutlet weak var foodname: UITextField!

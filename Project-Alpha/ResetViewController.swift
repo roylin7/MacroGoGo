@@ -53,7 +53,7 @@ class ResetViewController: UIViewController {
         
         if username.text == "" && password.text == "" && newPassword.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please enter your information.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your information", preferredStyle: UIAlertControllerStyle.alert)
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 
                 print("Ok Button Pressed 1");
@@ -66,7 +66,7 @@ class ResetViewController: UIViewController {
         
         if username.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please enter your username.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your username", preferredStyle: UIAlertControllerStyle.alert)
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 
                 print("Ok Button Pressed 1");
@@ -79,7 +79,7 @@ class ResetViewController: UIViewController {
         }
         if password.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please enter your old password.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your old password", preferredStyle: UIAlertControllerStyle.alert)
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 
                 print("Ok Button Pressed 1");
@@ -92,7 +92,7 @@ class ResetViewController: UIViewController {
             
         else if newPassword.text == "" {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please enter your new password.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your new password", preferredStyle: UIAlertControllerStyle.alert)
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 print("Ok Button Pressed 1");
             }
@@ -122,7 +122,7 @@ class ResetViewController: UIViewController {
                     bool = true
                 }
                 else{
-                    self.alertController = UIAlertController(title: "Error", message: "Please put the correct old password.", preferredStyle: UIAlertControllerStyle.alert)
+                    self.alertController = UIAlertController(title: "Error", message: "Please re-enter your old password correctly", preferredStyle: UIAlertControllerStyle.alert)
                     let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                         print("Ok Button Pressed 1");
                     }
@@ -132,7 +132,7 @@ class ResetViewController: UIViewController {
                 }
                 }
             else{
-                self.alertController = UIAlertController(title: "Error", message: "Username doesn't exists", preferredStyle: UIAlertControllerStyle.alert)
+                self.alertController = UIAlertController(title: "Error", message: "Username doesn't exist in system", preferredStyle: UIAlertControllerStyle.alert)
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                     
@@ -148,7 +148,7 @@ class ResetViewController: UIViewController {
         }
         if bool {
             self.performSegue(withIdentifier: "ss", sender: self)
-            self.alertController = UIAlertController(title: "", message: "Passwords have been changed and updated!", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "", message: "Password has been changed and updated!", preferredStyle: UIAlertControllerStyle.alert)
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 

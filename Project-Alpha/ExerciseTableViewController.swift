@@ -44,7 +44,7 @@ class ExerciseTableViewController: UITableViewController {
         if segue.identifier == "elog" {
             // Get the table view row that was tapped.
             if let indexPath = tableView.indexPathForSelectedRow {
-                let vc = segue.destination as! ElogViewController
+                let vc = segue.destination as! ExLogViewController
                 // Pass the selected data model object to the destination view controller.
                 vc.elogs = DataStore.shared.getElog(index: indexPath.row)
                 // Set the navigation bar back button text.

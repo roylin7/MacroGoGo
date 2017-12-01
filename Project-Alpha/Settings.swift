@@ -1,5 +1,5 @@
 //
-//  Setting.swift
+//  Settings.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 10/31/17.
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 
 
-class Setting: UIViewController, UITextFieldDelegate {
+class Settings: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Settings"
@@ -141,12 +141,12 @@ class Setting: UIViewController, UITextFieldDelegate {
         }
         else{
             let usereid = Auth.auth().currentUser?.uid
-            let newSetting = infoSetting(uid: usereid!, heightF: lblheightf.text!, heightI: lblheighti.text!, weight: lblweight.text!, tfat: lbltargetfat.text!, tcarb: targetcarbohydrate.text!, tprotein: lbltargetpotein.text!)
+            let newSetting = InfoSetting(uid: usereid!, heightF: lblheightf.text!, heightI: lblheighti.text!, weight: lblweight.text!, tfat: lbltargetfat.text!, tcarb: targetcarbohydrate.text!, tprotein: lbltargetpotein.text!)
             
             DataStore.shared.setSetting(info: newSetting)
             
             
-            self.alertController = UIAlertController(title: "Thank You", message: "Your information will be updated and saved.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Thank You", message: "Your information will be updated and saved in the system!", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in

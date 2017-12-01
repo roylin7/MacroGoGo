@@ -64,7 +64,7 @@ class Registration: UIViewController, UITextFieldDelegate  {
         // create Person object for user subsequently
         if lblfullname.text == "" && lblusername.text == "" && lblpw.text == "" && lblsex.text == ""  {
             
-            self.alertController = UIAlertController(title: "Error", message: "Please enter your information.", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Please enter your information", preferredStyle: UIAlertControllerStyle.alert)
             
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
@@ -149,7 +149,7 @@ class Registration: UIViewController, UITextFieldDelegate  {
         
         if(DataStore.shared.usernameExist(username: newString!)){
             
-            self.alertController = UIAlertController(title: "Error", message: "Username already exists", preferredStyle: UIAlertControllerStyle.alert)
+            self.alertController = UIAlertController(title: "Error", message: "Username already exists in system", preferredStyle: UIAlertControllerStyle.alert)
             
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
                 

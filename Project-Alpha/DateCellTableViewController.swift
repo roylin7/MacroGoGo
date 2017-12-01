@@ -63,7 +63,7 @@ class DateCellTableViewController: UITableViewController {
             // Get the table view row that was tapped.
             if let date = tableView.dequeueReusableCell(withIdentifier: "date")?.textLabel{
                 print(String(describing: date))
-                let vc = segue.destination as! FoodlogcellTableViewController
+                let vc = segue.destination as! FoodLogCellTableViewController
                 // Pass the selected data model object to the destination view controller.
                 vc.flogs = DataStore.shared.getFoodlogsByDate(date:String(describing: date))
                 // Set the navigation bar back button text.
