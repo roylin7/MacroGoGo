@@ -16,7 +16,6 @@ class SignIn: UIViewController {
     // to be filled out upon login prompt
     @IBOutlet weak var lblusername: UITextField!
     @IBOutlet weak var lblpw: UITextField!
-   
     
     @IBOutlet weak var lblmsg: UILabel!
     override func viewDidLoad() {
@@ -70,9 +69,9 @@ class SignIn: UIViewController {
         else {
             lblmsg.text = "One or more credentials is invalid, please try again!!!"
         }
-        
-}
-    
-    
-    
+    }
+    // Called when user touches main view (outside the UITextField).
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
