@@ -81,6 +81,9 @@ class DataStore {
         
         return a
         
+        
+        
+        
     }
     
     func usernameExist(username: String) -> Bool{
