@@ -33,8 +33,7 @@ class DataStore {
     }
     
     func Ecount() -> Int {
-        return Elog.count
-    }
+        return Elog.count  }
     
     func Fcount() -> Int{
         return foodlogs.count

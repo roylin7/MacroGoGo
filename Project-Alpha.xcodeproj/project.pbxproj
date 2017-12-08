@@ -15,6 +15,8 @@
 		AF0422431FC9830500507F57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0422421FC9830500507F57 /* CameraViewController.swift */; };
 		AF0D04F31FCF416800D6FF87 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D04F21FCF416800D6FF87 /* ExerciseTableViewController.swift */; };
 		AF13EB9F1FCE192A00EC9D55 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13EB9E1FCE192A00EC9D55 /* LogViewController.swift */; };
+		AF3CA8501FDA2FBC00DB2051 /* CalendarFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CA84F1FDA2FBC00DB2051 /* CalendarFoodTableViewController.swift */; };
+		AF3CA8521FDA30E300DB2051 /* CalendarFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CA8511FDA30E300DB2051 /* CalendarFoodViewController.swift */; };
 		AF8E9FA61FC8D06900946143 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E9FA51FC8D06900946143 /* CustomCell.swift */; };
 		AF8E9FA81FC8D36C00946143 /* FoodLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */; };
 		AF9EECB71FC4FF5E00186E6B /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */; };
@@ -54,6 +56,8 @@
 		AF0422421FC9830500507F57 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		AF0D04F21FCF416800D6FF87 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		AF13EB9E1FCE192A00EC9D55 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		AF3CA84F1FDA2FBC00DB2051 /* CalendarFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFoodTableViewController.swift; sourceTree = "<group>"; };
+		AF3CA8511FDA30E300DB2051 /* CalendarFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFoodViewController.swift; sourceTree = "<group>"; };
 		AF8E9FA51FC8D06900946143 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogViewController.swift; sourceTree = "<group>"; };
 		AF9EECB61FC4FF5E00186E6B /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				AF8E9FA71FC8D36C00946143 /* FoodLogViewController.swift */,
 				B0EA9B721FC0FDA200A1872B /* FoodLog.swift */,
 				B098794E1FA9682900026FCC /* Settings.swift */,
+				AF3CA8511FDA30E300DB2051 /* CalendarFoodViewController.swift */,
+				AF3CA84F1FDA2FBC00DB2051 /* CalendarFoodTableViewController.swift */,
 				B03320F71FCE49E300131BE6 /* InfoSetting.swift */,
 				AFBC44CE1FC418040059C73F /* ResetViewController.swift */,
 				AF0422421FC9830500507F57 /* CameraViewController.swift */,
@@ -325,6 +331,7 @@
 				B0D21DDE1F9EA7B000C7F85A /* LaunchScreen.swift in Sources */,
 				B0EA9B731FC0FDA200A1872B /* FoodLog.swift in Sources */,
 				B04064EF1FD0BDD4007B9079 /* FoodLogCellTableViewController.swift in Sources */,
+				AF3CA8501FDA2FBC00DB2051 /* CalendarFoodTableViewController.swift in Sources */,
 				AF8E9FA81FC8D36C00946143 /* FoodLogViewController.swift in Sources */,
 				AFBC44CF1FC418040059C73F /* ResetViewController.swift in Sources */,
 				AF0422431FC9830500507F57 /* CameraViewController.swift in Sources */,
@@ -333,6 +340,7 @@
 				B0F2E9CD1FCF7CDE0032741B /* LoadFoodLogViewController.swift in Sources */,
 				B03320F81FCE49E300131BE6 /* InfoSetting.swift in Sources */,
 				B098794F1FA9682900026FCC /* Settings.swift in Sources */,
+				AF3CA8521FDA30E300DB2051 /* CalendarFoodViewController.swift in Sources */,
 				B025ED241FCE916A00AF4C4B /* ExerciseLog.swift in Sources */,
 				B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */,
 			);

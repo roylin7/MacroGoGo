@@ -12,7 +12,7 @@ class loadFoodlogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataStore.shared.loadFoodlog()
+        
 
         // Do any additional setup after loading the view.
     }
