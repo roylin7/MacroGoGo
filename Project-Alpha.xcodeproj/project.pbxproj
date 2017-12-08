@@ -11,6 +11,7 @@
 		6D44121A1FD8D8CE00C2B38F /* macro-apple-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4412191FD8D8CD00C2B38F /* macro-apple-edit.png */; };
 		6D44121E1FD8DCCC00C2B38F /* macro-logo-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D44121D1FD8DCCC00C2B38F /* macro-logo-edit.png */; };
 		6D91AB831FBBB8AC00E36E07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D91AB821FBBB8AC00E36E07 /* GoogleService-Info.plist */; };
+		6DBEE8481FDA38BC0080FA92 /* MacroTrackerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8471FDA38BC0080FA92 /* MacroTrackerScreen.swift */; };
 		6DF35C521FC5392A0062C80E /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF35C511FC5392A0062C80E /* MainScreen.swift */; };
 		AF0422431FC9830500507F57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0422421FC9830500507F57 /* CameraViewController.swift */; };
 		AF0D04F31FCF416800D6FF87 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D04F21FCF416800D6FF87 /* ExerciseTableViewController.swift */; };
@@ -51,6 +52,7 @@
 		6D4412191FD8D8CD00C2B38F /* macro-apple-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "macro-apple-edit.png"; path = "App-Docs/macro-apple-edit.png"; sourceTree = SOURCE_ROOT; };
 		6D44121D1FD8DCCC00C2B38F /* macro-logo-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "macro-logo-edit.png"; path = "App-Docs/macro-logo-edit.png"; sourceTree = SOURCE_ROOT; };
 		6D91AB821FBBB8AC00E36E07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DBEE8471FDA38BC0080FA92 /* MacroTrackerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroTrackerScreen.swift; sourceTree = "<group>"; };
 		6DF35C511FC5392A0062C80E /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		982541B2CC755D25AD8EBA99 /* Pods_Project_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0422421FC9830500507F57 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				B03320F71FCE49E300131BE6 /* InfoSetting.swift */,
 				AFBC44CE1FC418040059C73F /* ResetViewController.swift */,
 				AF0422421FC9830500507F57 /* CameraViewController.swift */,
+				6DBEE8471FDA38BC0080FA92 /* MacroTrackerScreen.swift */,
 				B0D21DCC1F9EA76400C7F85A /* Main.storyboard */,
 				B0D21DD41F9EA76400C7F85A /* LaunchScreen.storyboard */,
 				6D4412171FD8D4EA00C2B38F /* dumbbell-edit.png */,
@@ -341,6 +344,7 @@
 				B03320F81FCE49E300131BE6 /* InfoSetting.swift in Sources */,
 				B098794F1FA9682900026FCC /* Settings.swift in Sources */,
 				AF3CA8521FDA30E300DB2051 /* CalendarFoodViewController.swift in Sources */,
+				6DBEE8481FDA38BC0080FA92 /* MacroTrackerScreen.swift in Sources */,
 				B025ED241FCE916A00AF4C4B /* ExerciseLog.swift in Sources */,
 				B0D21DD11F9EA76400C7F85A /* Project_Alpha.xcdatamodeld in Sources */,
 			);
