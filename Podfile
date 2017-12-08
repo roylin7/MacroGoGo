@@ -8,6 +8,7 @@ target 'Project-Alpha' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
-   pod 'JTAppleCalendar', '~> 7.0'
+  pod 'JTAppleCalendar', '~> 7.0'
+  pod ‘Charts’
 end
 

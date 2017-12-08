@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
   - Firebase/Auth (4.4.0):
     - Firebase/Core
     - FirebaseAuth (= 4.3.0)
@@ -45,12 +48,14 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - Charts
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - JTAppleCalendar (~> 7.0)
 
 SPEC CHECKSUMS:
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseAuth: e0087d479709b20b9613b804704a928d6eafb052
@@ -63,6 +68,6 @@ SPEC CHECKSUMS:
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: ad0f38e3878dd6d81bc3f9fc61efce3517bccbfe
+PODFILE CHECKSUM: 83e1753af5ac577b6b076de0a56671e5a1f21924
 
 COCOAPODS: 1.3.1
