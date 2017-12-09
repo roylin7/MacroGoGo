@@ -125,7 +125,9 @@ class DataStore {
             }
             
         }
+        print (dateList)
         return dateList
+        
     }
         
     func getDateListCount() -> Int{
@@ -135,10 +137,15 @@ class DataStore {
     func getFoodlogsByDate(date:String) -> [FoodLog]{
         var foodlogbydate = [FoodLog]()
         let num: Int = DataStore.shared.Fcount()
-        var i = 0
+        var i = 1
+        print (num)
         while i < num{
             let foodlog = DataStore.shared.getFoodlog(index:num)
-            if getDate(foodlog: foodlog) == date{
+            print (foodlog)
+            let s = getDate(foodlog: foodlog)
+            print (s)
+            print (date)
+            if s == date {
                 foodlogbydate.append(foodlog)
                 i += 1
             }
@@ -170,6 +177,7 @@ class DataStore {
         let date = foodlog.date
         let index =  date.index(date.startIndex, offsetBy: 11)
         let substring = date[..<index]
+        print (substring)
         return String(substring)
     }
     

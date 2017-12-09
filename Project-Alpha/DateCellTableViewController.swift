@@ -30,30 +30,18 @@ class DateCellTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var foodlogs = [FoodLog]()
-        var i: Int = 0
-        while i < DataStore.shared.Fcount() {
-            foodlogs.append(DataStore.shared.getFoodlog(index: i))
-            i += 1
-        }
-        
-        let datelist = DataStore.shared.getDateList(foologs: foodlogs)
-        return datelist.count
+        return DataStore.shared.Fcount()
+           
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "date", for: indexPath)
         
         // Configure the cell...
-        var foodlogs = [FoodLog]()
-        var i: Int = 0
-        while i < DataStore.shared.Fcount() {
-            foodlogs.append(DataStore.shared.getFoodlog(index: i))
-            i += 1
-        }
+        let flog = DataStore.shared.getFoodlog(index: indexPath.row)
         
-        let datelist = DataStore.shared.getDateList(foologs: foodlogs)
-        cell.textLabel?.text = datelist[indexPath.row]
+        cell.textLabel?.text = flog.foodname
+        
         
         return cell
     }

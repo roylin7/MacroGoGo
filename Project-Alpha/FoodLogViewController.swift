@@ -9,11 +9,16 @@
 import UIKit
 import JTAppleCalendar
 
+protocol VC2Protocol {
+    func date2(year: String, cell: CustomCell) 
+}
 class FoodLogViewController: UIViewController {
+    var delegate: VC2Protocol?
     let format = DateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCalendar()
+       
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +39,9 @@ class FoodLogViewController: UIViewController {
         }
         
     }
+    
+  
+    
     
     func setCalendar(from visibleDates: DateSegmentInfo) {
         let date = visibleDates.monthDates.first!.date
@@ -86,8 +94,10 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
         cell.dateLabel.text = cellState.text
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validcell = cell as? CustomCell else { return }
-        validcell.selectView.isHidden = false
+        guard let validcell2 = cell as? CustomCell else { return }
+        validcell2.selectView.isHidden = false
+        
+        self.delegate?.date2(year: year.text!, cell: validcell2)
         }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validcell = cell as? CustomCell else { return }
