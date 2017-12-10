@@ -16,7 +16,11 @@ class CalendarFoodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(newlist1[0].carb)
+<<<<<<< HEAD
     
+=======
+        
+>>>>>>> master
     }
     
     override func didReceiveMemoryWarning() {

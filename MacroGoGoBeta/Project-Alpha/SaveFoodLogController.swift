@@ -5,7 +5,6 @@
 //  Created by Roy Lin on 11/29/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -20,10 +19,10 @@ class SaveFoodLogController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,6 +54,7 @@ class SaveFoodLogController: UIViewController {
             DataStore.shared.addFoodlog(foodlog: newFoodLog)
            
             
+            
             self.alertController = UIAlertController(title: "Thank you", message: "Saved ", preferredStyle: UIAlertControllerStyle.alert)
             
             
@@ -68,7 +68,7 @@ class SaveFoodLogController: UIViewController {
         
     }
     
-
     
-
+    
+    
 }

@@ -18,10 +18,14 @@ class FoodLogViewController: UIViewController {
         super.viewDidLoad()
         setupCalendar()
         
+<<<<<<< HEAD
 <<<<<<< HEAD:Project-Alpha/FoodLogViewController.swift
        
 =======
 >>>>>>> master:MacroGoGoBeta/Project-Alpha/FoodLogViewController.swift
+=======
+        
+>>>>>>> master
         // Do any additional setup after loading the view.
     }
     
@@ -73,7 +77,11 @@ extension FoodLogViewController: JTAppleCalendarViewDataSource{
     }
     
     
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> master
 }
 
 extension FoodLogViewController: JTAppleCalendarViewDelegate {
@@ -103,13 +111,19 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
         validcell2.selectView.isHidden = false
         
         self.delegate?.date2(year: year.text!, cell: validcell2)
+<<<<<<< HEAD
 <<<<<<< HEAD:Project-Alpha/FoodLogViewController.swift
+=======
+>>>>>>> master
         let day = cellState.text
         print(day)
         print(self.month.text!)
         print(self.year.text!)
+<<<<<<< HEAD
         }
 =======
+=======
+>>>>>>> master
     }
 >>>>>>> master:MacroGoGoBeta/Project-Alpha/FoodLogViewController.swift
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {

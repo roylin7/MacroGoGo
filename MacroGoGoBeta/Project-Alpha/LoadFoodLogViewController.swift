@@ -1,6 +1,5 @@
-
 //
-//  loadFoodlogViewController.swift
+//  LoadFoodlogViewController.swift
 //  Project-Alpha
 //
 //  Created by Roy Lin on 11/29/17.
@@ -8,11 +7,14 @@
 //
 import UIKit
 
-class loadFoodlogViewController: UIViewController {
+class LoadFoodlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
 <<<<<<< HEAD:Project-Alpha/LoadFoodLogViewController.swift
+=======
+>>>>>>> master
         var foodlog = [FoodLog]()
         let num = DataStore.shared.Fcount()
         var i = 0
@@ -24,9 +26,12 @@ class loadFoodlogViewController: UIViewController {
         }
         
         
+<<<<<<< HEAD
 
 =======
         DataStore.shared.loadFoodlog()
+=======
+>>>>>>> master
         
 >>>>>>> master:MacroGoGoBeta/Project-Alpha/LoadFoodLogViewController.swift
         // Do any additional setup after loading the view.
@@ -46,4 +51,5 @@ class loadFoodlogViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
 }

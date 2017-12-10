@@ -327,4 +327,14 @@ class DataStore {
         self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+

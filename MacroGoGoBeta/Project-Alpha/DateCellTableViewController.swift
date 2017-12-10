@@ -12,10 +12,13 @@ class DateCellTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
 <<<<<<< HEAD:Project-Alpha/DateCellTableViewController.swift
 =======
         
 >>>>>>> master:MacroGoGoBeta/Project-Alpha/DateCellTableViewController.swift
+=======
+>>>>>>> master
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +57,7 @@ class DateCellTableViewController: UITableViewController {
     
 =======
     
+<<<<<<< HEAD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flog" {
             // Get the table view row that was tapped.
@@ -72,4 +76,11 @@ class DateCellTableViewController: UITableViewController {
         }
     }
 >>>>>>> master:MacroGoGoBeta/Project-Alpha/DateCellTableViewController.swift
+=======
+    
+    
+    
+    
+>>>>>>> master
 }
+
