@@ -5,7 +5,6 @@
 //  Created by Roy Lin on 10/26/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
-
 import Foundation
 import Firebase
 import FirebaseDatabase
@@ -35,7 +34,7 @@ class DataStore {
     func Ecount() -> Int {
         return Elog.count  }
     
-    func Fcount() -> Int {
+    func Fcount() -> Int{
         return foodlogs.count
     }
     
@@ -88,7 +87,7 @@ class DataStore {
     func usernameExist(username: String) -> Bool{
         
         var usernamelist = DataStore.shared.getUserNameList()
-       
+        
         if usernamelist.contains(username){
             return true
         }
@@ -97,14 +96,14 @@ class DataStore {
         }
         
     }
-
+    
     func getUsername(username: String) -> String{
         var usernamelist1 = DataStore.shared.getUserNameList()
-   
+        
         if usernamelist1.contains(username){
             return username
         }
-      
+            
         else{
             return "Username not found in system"
         }
@@ -125,9 +124,11 @@ class DataStore {
             }
             
         }
+        print (dateList)
         return dateList
-    }
         
+    }
+    
     func getDateListCount() -> Int{
         return self.getDateList(foologs: DataStore.shared.getFoodlogs()).count
     }
@@ -135,10 +136,15 @@ class DataStore {
     func getFoodlogsByDate(date:String) -> [FoodLog]{
         var foodlogbydate = [FoodLog]()
         let num: Int = DataStore.shared.Fcount()
-        var i = 0
+        var i = 1
+        print (num)
         while i < num{
             let foodlog = DataStore.shared.getFoodlog(index:num)
-            if getDate(foodlog: foodlog) == date{
+            print (foodlog)
+            let s = getDate(foodlog: foodlog)
+            print (s)
+            print (date)
+            if s == date {
                 foodlogbydate.append(foodlog)
                 i += 1
             }
@@ -170,12 +176,13 @@ class DataStore {
         let date = foodlog.date
         let index =  date.index(date.startIndex, offsetBy: 11)
         let substring = date[..<index]
+        print (substring)
         return String(substring)
     }
     
     
     func getPassword(username: String) -> String {
-  
+        
         let place = DataStore.shared.usernameIndex(username: username)
         let person = people[place]
         let oldpassword = person.pw
@@ -203,7 +210,7 @@ class DataStore {
                     let sex = person["sex"]
                     
                     let newPerson = Person(uid:uid! as! String ,username: username! as! String, fullname: fName! as! String, pw: pw! as! String,sex: sex! as! String)
-
+                    
                     self.people.append(newPerson)
                 }
             }
@@ -276,11 +283,11 @@ class DataStore {
             "fName": person.fullname,
             "pw": person.pw,
             "sex": person.sex,
-        ]
+            ]
         
         // Save to Firebase.
         self.ref.child("people").child(person.uid).setValue(personRecord)
-
+        
         
         // Also save to our internal array, to stay in sync with what's in Firebase.
         people.append(person)
@@ -322,14 +329,4 @@ class DataStore {
         self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
         
     }
-    
-    
-    
-    
-
-   
-    
-
-    
 }
-

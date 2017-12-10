@@ -5,7 +5,6 @@
 //  Created by Roy Lin on 11/20/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
-
 import UIKit
 import FirebaseAuth
 
@@ -13,6 +12,7 @@ class MainScreen: UIViewController {
     var alertController:UIAlertController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataStore.shared.loadFoodlog()
         // Do any additional setup after loading the view.
     }
     
@@ -27,7 +27,7 @@ class MainScreen: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-    
+        
         self.performSegue(withIdentifier: "home", sender: self)
         self.alertController = UIAlertController(title: "", message: "Logged Out Sucessfully!", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -44,17 +44,14 @@ class MainScreen: UIViewController {
         self.present(self.alertController!, animated: true, completion:nil)
         
     }
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+}
 
-
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */

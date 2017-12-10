@@ -5,11 +5,14 @@
 //  Created by Sheryar Ali on 12/7/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
-
 import UIKit
 
-class CalendarFoodTableViewController: UITableViewController {
-
+class CalendarFoodTableViewController: UITableViewController, VC2Protocol {
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +29,7 @@ class CalendarFoodTableViewController: UITableViewController {
         return 1
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataStore.shared.Fcount()
     }
@@ -41,6 +45,11 @@ class CalendarFoodTableViewController: UITableViewController {
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "vc2" {
+            if let destinationVC = segue.destination as? FoodLogViewController {
+                destinationVC.delegate = self
+            }
+        }
         if segue.identifier == "flog" {
             // Get the table view row that was tapped.
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -57,8 +66,17 @@ class CalendarFoodTableViewController: UITableViewController {
         }
     }
     
+    func date2(year: String, cell: CustomCell){
+        
+        let day = "0" + cell.dateLabel.text!
+        
+        let date2 = "12" + "-" + day + "-" + year + " "
+        print (date2)
+        let foodlogn = DataStore.shared.getFoodlogsByDate(date: date2)
+        print(foodlogn)
+        
+        
+    }
     
     
-
-
 }
