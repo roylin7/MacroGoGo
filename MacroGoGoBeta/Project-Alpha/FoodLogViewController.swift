@@ -134,7 +134,6 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
             let date = year+"-" + month + "-" + day1
             print(date)
             let newlist = DataStore.shared.getFoodlogsByDate(date: date, foodlogs: list)
-            print(newlist[0].carb)
             vc.newlist1 = newlist
             
             

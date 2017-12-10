@@ -218,31 +218,37 @@ class DataStore {
     }
     
     func loadFoodlog(){
-        foodlogs = [FoodLog]()
-        let uid = Auth.auth().currentUser?.uid
-        ref.child("foodlog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get the top-level dictionary.
-            let value = snapshot.value as? NSDictionary
+            foodlogs = [FoodLog]()
+            let uid = Auth.auth().currentUser?.uid
+            if uid == nil {
+                return
+            }
+            ref.child("foodlog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get the top-level dictionary.
+                let value = snapshot.value as? NSDictionary
             
-            if let foodlog = value {
-                for f in foodlog{
-                    let fl = f.value as! [String:String]
-                    let uid = fl["uid"]
-                    let date = fl["date"]
-                    let foodname = fl["foodname"]
-                    let carb = fl["carb"]
-                    let protein = fl["protein"]
-                    let fat = fl["fat"]
+                if let foodlog = value {
+                    for f in foodlog{
+                        let fl = f.value as! [String:String]
+                        let uid = fl["uid"]
+                        let date = fl["date"]
+                        let foodname = fl["foodname"]
+                        let carb = fl["carb"]
+                        let protein = fl["protein"]
+                        let fat = fl["fat"]
                     
-                    let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!, fat: fat!, protein: protein!)
+                        let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!,  fat: fat!, protein: protein!)
                     
-                    self.foodlogs.append(newfoodlog)
+                        self.foodlogs.append(newfoodlog)
+                    }
                 }
             }
-            
-        }) { (error) in
+        
+        ){(error) in
             print(error.localizedDescription)
         }
+        
+       
         
     }
     func loadElog(){

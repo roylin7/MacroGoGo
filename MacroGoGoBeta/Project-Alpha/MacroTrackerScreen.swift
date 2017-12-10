@@ -22,7 +22,6 @@ class MacroTrackerScreen: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        print(getMacros())
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,7 +29,7 @@ class MacroTrackerScreen: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getMacros() -> [[String]] {
+    func getMacroLogs() -> [[String]] {
         var fLog: [[String]] = [] // empty array to store totality of food logs for day in
         // each entry will be an array in and of itself; [carbStr, fatStr, protStr]
         var i: Int = 0 // initialize counter
@@ -50,7 +49,24 @@ class MacroTrackerScreen: UIViewController {
             fLog.append(tempLog)
             i += 1 // increment counter
         }
+        // returns 2D list with macro content strings
         return fLog
+    }
+    
+    func getMacros(fLog: [[String]]) -> [Int] {
+        var macroTemp: [Int] = []
+        var i: Int = 0 // initialize counter1
+        while i < fLog.count {
+            let carb:Int! = Int(fLog[i][0])
+            let fat:Int! = Int(fLog[i][1])
+            let prot:Int! = Int(fLog[i][2])
+            macroTemp.append(carb)
+            macroTemp.append(fat)
+            macroTemp.append(prot)
+            i += 1 // increment counter1
+        }
+        print(macroTemp)
+        return macroTemp
     }
     
     // button handler
@@ -58,6 +74,8 @@ class MacroTrackerScreen: UIViewController {
         let input = Double(textInput.text!) // take textbox input - should be double (higher precision float) or int data type
         numbers.append(input!) // add direct data entry to original array
         updateGraph()
+        let foodLog = getMacroLogs()
+        getMacros(fLog: foodLog)
     }
     
     func updateGraph() {
