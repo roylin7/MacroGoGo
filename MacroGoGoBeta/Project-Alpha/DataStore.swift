@@ -139,7 +139,7 @@ class DataStore {
         var i = 0
         print (num)
         while i < num{
-            let foodlog = foodlogs[num]
+            let foodlog = foodlogs[i]
             let s = getDate(foodlog: foodlog)
             if s == date {
                 foodlogbydate.append(foodlog)
