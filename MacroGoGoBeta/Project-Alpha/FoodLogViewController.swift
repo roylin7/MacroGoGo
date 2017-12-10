@@ -18,6 +18,7 @@ class FoodLogViewController: UIViewController {
         super.viewDidLoad()
         setupCalendar()
         
+        
         // Do any additional setup after loading the view.
     }
     
@@ -29,12 +30,11 @@ class FoodLogViewController: UIViewController {
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month : UILabel!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    
+    var day = "0"
     
     func setupCalendar () {
         calendarView.visibleDates { (visibleDates) in
             self.setCalendar(from: visibleDates)
-            
         }
         
     }
@@ -48,7 +48,7 @@ class FoodLogViewController: UIViewController {
         self.format.dateFormat = "yyyy"
         self.year.text = self.format.string(from: date)
         
-        self.format.dateFormat = "MMMM"
+        self.format.dateFormat = "MM"
         self.month.text = self.format.string(from: date)
     }
 }
@@ -71,7 +71,6 @@ extension FoodLogViewController: JTAppleCalendarViewDataSource{
     
     
     
-    
 }
 
 extension FoodLogViewController: JTAppleCalendarViewDelegate {
@@ -91,12 +90,20 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
         
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "c", for: indexPath) as! CustomCell
         cell.dateLabel.text = cellState.text
+        let day = cellState.text
+        print(day)
+        print(self.month.text!)
+        print(self.year.text!)
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validcell2 = cell as? CustomCell else { return }
         validcell2.selectView.isHidden = false
         
         self.delegate?.date2(year: year.text!, cell: validcell2)
+        let day = cellState.text
+        print(day)
+        print(self.month.text!)
+        print(self.year.text!)
     }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validcell = cell as? CustomCell else { return }
@@ -105,6 +112,39 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setCalendar(from: visibleDates)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "haha" {
+            // Get the table view row that was tapped.
+            let vc = segue.destination as! CalendarFoodTableViewController
+            // Pass the selected data model object to the destination view controller.
+            let num = DataStore.shared.Fcount()
+            var i = 0
+            var list = [FoodLog]()
+            while i < num {
+                var log = DataStore.shared.getFoodlog(index: i)
+                list.append(log)
+                i += 1
+            }
+            let month = self.month.text!
+            let year = self.year.text!
+            let day1 = day
+            
+            let date = year+"-" + month + "-" + day1
+            print(date)
+            let newlist = DataStore.shared.getFoodlogsByDate(date: date, foodlogs: list)
+            print(newlist[0].carb)
+            vc.newlist1 = newlist
+            
+            
+            // Set the navigation bar back button text.
+            // If you don't do this, the back button text is this screens title text.
+            // If this screen didn't have any nav bar title text, the back button text would be 'Back', by default.
+            let backItem = UIBarButtonItem()
+            backItem.title = "Calendar"
+            navigationItem.backBarButtonItem = backItem
+        }
     }
     
 }

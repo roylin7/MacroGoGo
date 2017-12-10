@@ -133,17 +133,14 @@ class DataStore {
         return self.getDateList(foologs: DataStore.shared.getFoodlogs()).count
     }
     
-    func getFoodlogsByDate(date:String) -> [FoodLog]{
+    func getFoodlogsByDate(date:String,foodlogs:[FoodLog]) -> [FoodLog]{
         var foodlogbydate = [FoodLog]()
-        let num: Int = DataStore.shared.Fcount()
-        var i = 1
+        let num: Int = foodlogs.count
+        var i = 0
         print (num)
         while i < num{
-            let foodlog = DataStore.shared.getFoodlog(index:num)
-            print (foodlog)
+            let foodlog = foodlogs[num]
             let s = getDate(foodlog: foodlog)
-            print (s)
-            print (date)
             if s == date {
                 foodlogbydate.append(foodlog)
                 i += 1
@@ -172,9 +169,10 @@ class DataStore {
         }
     }
     
+    
     func getDate(foodlog: FoodLog) -> String{
         let date = foodlog.date
-        let index =  date.index(date.startIndex, offsetBy: 11)
+        let index =  date.index(date.startIndex, offsetBy: 10)
         let substring = date[..<index]
         print (substring)
         return String(substring)
@@ -329,4 +327,14 @@ class DataStore {
         self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
