@@ -409,7 +409,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Food Log Archive"/>
                                 <connections>
-                                    <segue destination="bUb-W8-gqQ" kind="show" id="m9u-EO-zdG"/>
+                                    <segue destination="QK1-xd-Ln0" kind="show" id="CVo-PO-n1h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufh-HH-ciK">
@@ -759,7 +759,7 @@
                                                         <connections>
                                                             <outlet property="dateLabel" destination="LKz-nh-LR1" id="5wf-gh-Yk1"/>
                                                             <outlet property="selectView" destination="jvQ-V1-zNT" id="dhR-bs-RS5"/>
-                                                            <segue destination="W2v-y7-PWZ" kind="show" identifier="cellid2" id="VVX-9z-aKD"/>
+                                                            <segue destination="W2v-y7-PWZ" kind="showDetail" identifier="hehe" id="9RD-Xg-fnh"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -799,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iz3-UB-AC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7271" y="-615"/>
+            <point key="canvasLocation" x="7269.5652173913049" y="-615.48913043478262"/>
         </scene>
         <!--Calendar Food Table View Controller-->
         <scene sceneID="3iy-MX-hBv">
@@ -1298,24 +1298,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0j-gM-BkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4591" y="849"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="1My-jE-oi9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUb-W8-gqQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ekA-GZ-b0R">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QK1-xd-Ln0" kind="relationship" relationship="rootViewController" id="PLW-9o-Aw2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ce6-Nb-GI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6149.275362318841" y="-642.39130434782612"/>
         </scene>
     </scenes>
     <resources>

@@ -12,7 +12,17 @@ class loadFoodlogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataStore.shared.loadFoodlog()
+        var foodlog = [FoodLog]()
+        let num = DataStore.shared.Fcount()
+        var i = 0
+        while i < num{
+            let log = DataStore.shared.getFoodlog(index: i)
+            i += 1
+            foodlog.append(log)
+            print(log.foodname)
+        }
+        
+        
 
         // Do any additional setup after loading the view.
     }

@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 
 class SaveFoodLogController: UIViewController {
-   
+    
     var alertController:UIAlertController? = nil
     @IBOutlet weak var foodname: UITextField!
     @IBOutlet weak var fat: UITextField!
@@ -41,16 +41,19 @@ class SaveFoodLogController: UIViewController {
             self.present(self.alertController!, animated: true, completion:nil)
         }
         else {
+            
             let currentDate = Date()
             let formatter = DateFormatter()
+            let shortdate = DateFormatter()
             formatter.dateFormat = "MM-dd-YYYY HH:mm:ss"
-            
             let date = formatter.string(from: currentDate)
+            let sdate = shortdate.string(from: currentDate)
             let uid = Auth.auth().currentUser?.uid
             
             let newFoodLog = FoodLog(uid: uid!, date: date, foodname: foodname.text!, carb: carb.text!, fat: fat.text!, protein: protein.text!)
             
             DataStore.shared.addFoodlog(foodlog: newFoodLog)
+           
             
             self.alertController = UIAlertController(title: "Thank you", message: "Saved ", preferredStyle: UIAlertControllerStyle.alert)
             

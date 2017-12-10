@@ -8,15 +8,16 @@
 
 import UIKit
 
-class CalendarFoodTableViewController: UITableViewController, VC2Protocol {
+class CalendarFoodTableViewController: UITableViewController {
     
-    
+    var newlist1 : [FoodLog]!
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(newlist1[0].carb)
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,11 +47,6 @@ class CalendarFoodTableViewController: UITableViewController, VC2Protocol {
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "vc2" {
-            if let destinationVC = segue.destination as? FoodLogViewController {
-                destinationVC.delegate = self
-            }
-        }
         if segue.identifier == "flog" {
             // Get the table view row that was tapped.
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -67,17 +63,7 @@ class CalendarFoodTableViewController: UITableViewController, VC2Protocol {
         }
     }
     
-    func date2(year: String, cell: CustomCell){
-        
-        let day = "0" + cell.dateLabel.text!
-        
-        let date2 = "12" + "-" + day + "-" + year + " "
-        print (date2)
-        let foodlogn = DataStore.shared.getFoodlogsByDate(date: date2)
-        print(foodlogn)
-        
-        
-    }
+    
     
 
 }
