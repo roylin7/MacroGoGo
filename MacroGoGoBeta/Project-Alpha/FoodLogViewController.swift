@@ -115,7 +115,9 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
         if segue.identifier == "haha" {
+             /*///
             // Get the table view row that was tapped.
             let vc = segue.destination as! CalendarFoodTableViewController
             // Pass the selected data model object to the destination view controller.
@@ -136,7 +138,7 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
             let newlist = DataStore.shared.getFoodlogsByDate(date: date, foodlogs: list)
             vc.newlist1 = newlist
             
-            
+            *///
             // Set the navigation bar back button text.
             // If you don't do this, the back button text is this screens title text.
             // If this screen didn't have any nav bar title text, the back button text would be 'Back', by default.
@@ -144,6 +146,7 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
             backItem.title = "Calendar"
             navigationItem.backBarButtonItem = backItem
         }
+ 
     }
-    
+ 
 }
