@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project-Alpha/DataStore.swift"
-            timestampString = "533781818.443314"
+            timestampString = "534568032.745906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
             endingLineNumber = "242"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadFoodlog()"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -90,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project-Alpha/DataStore.swift"
-            timestampString = "533781818.443795"
+            timestampString = "534568032.746347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "233"
             endingLineNumber = "233"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadFoodlog()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
