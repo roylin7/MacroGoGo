@@ -12,9 +12,7 @@ import Charts
 class MacroTrackerScreen: UIViewController {
     
     @IBOutlet weak var macroChart: BarChartView!
-    @IBOutlet weak var textInput: UITextField!
     
-    var numbers: [Double] = [] // array for input storage
     var fLogCount: Int = DataStore.shared.Fcount() // get count of all food logs entered for day
 
     
@@ -53,39 +51,44 @@ class MacroTrackerScreen: UIViewController {
         return fLog
     }
     
-    func getMacros(fLog: [[String]]) -> [Int] {
-        var macroTemp: [Int] = []
-        var i: Int = 0 // initialize counter1
+    func getMacros(fLog: [[String]]) -> [Double] {
+        var macroList: [Double] = []
+        var carbTotal: Double = 0
+        var fatTotal: Double = 0
+        var protTotal: Double = 0
+        var i: Int = 0 // initialize counter
         while i < fLog.count {
-            let carb:Int! = Int(fLog[i][0])
-            let fat:Int! = Int(fLog[i][1])
-            let prot:Int! = Int(fLog[i][2])
-            macroTemp.append(carb)
-            macroTemp.append(fat)
-            macroTemp.append(prot)
-            i += 1 // increment counter1
+            let carb:Double! = Double(fLog[i][0])
+            let fat:Double! = Double(fLog[i][1])
+            let prot:Double! = Double(fLog[i][2])
+            i += 1 // increment counter
+            carbTotal += carb
+            fatTotal += fat
+            protTotal += prot
         }
-        print(macroTemp)
-        return macroTemp
+        macroList.append(carbTotal)
+        macroList.append(fatTotal)
+        macroList.append(protTotal)
+        return macroList
     }
     
     // button handler
     @IBAction func saveBtn(_ sender: Any) {
-        let input = Double(textInput.text!) // take textbox input - should be double (higher precision float) or int data type
-        numbers.append(input!) // add direct data entry to original array
-        updateGraph()
-        let foodLog = getMacroLogs()
-        getMacros(fLog: foodLog)
+        let foodLogPend = getMacroLogs()
+        let foodLogFinal = getMacros(fLog: foodLogPend)
+        
+        updateGraph(fLog: foodLogFinal)
     }
     
-    func updateGraph() {
-        var barGraphEntry: [ChartDataEntry] = Array() // new array with data to be displayed on chart
+    func updateGraph(fLog: [Double]) {
+        var i: Int = 0 // initialize counter
+        var barGraphEntry = [BarChartDataEntry]()
         
-        for (i, number) in numbers.enumerated() {
-            let value = BarChartDataEntry(x: Double(i), y: number) // set x and y datapoints
-            barGraphEntry.append(value) // add (x, y) datapoint to dataset array
+        while i < 3 {
+            let entry = BarChartDataEntry(x: Double(i), y: fLog[i]) // set x and y datapoints
+            barGraphEntry.append(entry) // add (x, y) datapoint to dataset array
             
-            let line1 = BarChartDataSet(values: barGraphEntry, label: "Number") // convert barGraphEntry to BarChartDataSet
+            let line1 = BarChartDataSet(values: barGraphEntry, label: "") // convert barGraphEntry to BarChartDataSet
             
             line1.colors = [NSUIColor.purple] // set color purple
             
@@ -95,7 +98,8 @@ class MacroTrackerScreen: UIViewController {
             macroChart.rightAxis.axisMinimum = 0.0
             macroChart.data = data // final data addition step with update
             
-            macroChart.chartDescription?.text = "Macronutrient Tracker - Daily Values"
+            macroChart.chartDescription?.text = ""
+            i += 1 // increment counter
         }
     }
 }
