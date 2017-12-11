@@ -42,7 +42,7 @@ class FoodLogCellTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodlogname", for: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = String(flogs[indexPath.row].foodname)
+        //cell.textLabel?.text = String(flogs[indexPath.row].foodname)
         
         return cell
     }

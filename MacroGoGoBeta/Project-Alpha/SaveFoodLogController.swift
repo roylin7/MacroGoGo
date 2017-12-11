@@ -49,7 +49,7 @@ class SaveFoodLogController: UIViewController {
             let sdate = shortdate.string(from: currentDate)
             let uid = Auth.auth().currentUser?.uid
             
-            let newFoodLog = FoodLog(uid: uid!, date: date, foodname: foodname.text!, carb: carb.text!, fat: fat.text!, protein: protein.text!)
+            let newFoodLog = FoodLog(uid: uid!, date: date, foodname: foodname.text!, carb: carb.text!, fat: fat.text!, protein: protein.text!, selectDate: "")
             
             DataStore.shared.addFoodlog(foodlog: newFoodLog)
             

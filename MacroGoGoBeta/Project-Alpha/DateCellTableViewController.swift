@@ -35,9 +35,9 @@ class DateCellTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "date", for: indexPath)
         
         // Configure the cell...
-        let flog = DataStore.shared.getFoodlog(index: indexPath.row)
+        //et flog = DataStore.shared.getFoodlog(index: indexPath.row)
         
-        cell.textLabel?.text = flog.foodname
+        //cell.textLabel?.text = flog.foodname
         
         
         return cell

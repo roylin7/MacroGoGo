@@ -37,13 +37,10 @@ class CalendarFoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellid2", for: indexPath)
         
-        // Configure the cell...
-        let flog = DataStore.shared.getFoodlog(index: indexPath.row)
+            var s = DataStore.shared.checkDate()
         
-        cell.textLabel?.text = flog.foodname
-        
-        
-        return cell
+            cell.textLabel?.text = String(s[indexPath.count-1].foodname)
+            return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flog" {
@@ -51,7 +48,7 @@ class CalendarFoodTableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let vc = segue.destination as! CalendarFoodViewController
                 // Pass the selected data model object to the destination view controller.
-                vc.flogs = DataStore.shared.getFoodlog(index: indexPath.row)
+               // vc.flogs = DataStore.shared.getFoodlog(index: indexPath.row)
                 // Set the navigation bar back button text.
                 // If you don't do this, the back button text is this screens title text.
                 // If this screen didn't have any nav bar title text, the back button text would be 'Back', by default.

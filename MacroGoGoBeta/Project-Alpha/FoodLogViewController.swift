@@ -98,12 +98,21 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validcell2 = cell as? CustomCell else { return }
         validcell2.selectView.isHidden = false
+        var d = date
+        print (d)
         
-        self.delegate?.date2(year: year.text!, cell: validcell2)
-        let day = cellState.text
-        print(day)
-        print(self.month.text!)
-        print(self.year.text!)
+        var day = Int(validcell2.dateLabel.text!)!
+      
+        var day2 = ""
+        if day < 10{
+            day2 = "0" + String(describing: day)
+        }
+        else{
+            day2 = String(describing: day)
+        }
+        let ss = month.text! + "-" + day2 + "-" + year.text! 
+        DataStore.shared.updateDate(s: ss)
+        DataStore.shared.checkDate()
     }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validcell = cell as? CustomCell else { return }

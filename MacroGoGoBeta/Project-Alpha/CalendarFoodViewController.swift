@@ -30,8 +30,8 @@ class CalendarFoodViewController: UIViewController {
     
     
     private func setLabels() {
-        log.text = flogs.foodname
-        name.text = flogs.protein
+        log.text = flogs.protein
+        name.text = flogs.foodname
         fat.text = flogs.fat
         carboyhdrates.text = flogs.carb
     }

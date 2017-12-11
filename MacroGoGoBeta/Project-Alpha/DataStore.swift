@@ -155,6 +155,31 @@ class DataStore {
     func getFoodlogs() -> [FoodLog]{
         return foodlogs
     }
+    func updateDate(s:String){
+        let uid = Auth.auth().currentUser?.uid
+        
+        let f = getFoodlog(index: foodlogs.count-1)
+        if foodlogs.count > 0 {
+            self.ref.child("foodlog").child(uid!).child(f.date).updateChildValues(["selectDate":s])
+        }
+    }
+    func checkDate()-> [FoodLog]{
+        let uid = Auth.auth().currentUser?.uid
+        let f = getFoodlog(index: foodlogs.count-1)
+        var foodlog1 = [FoodLog]()
+        print(f.date)
+        print (f)
+        _ = ref.child("foodlog").child(uid!).child(f.date).child("selectDate").observeSingleEvent(of: .value, with: { (snapshot) in
+                let date1 = snapshot.value as! String
+                print(date1)
+                foodlog1 = DataStore.shared.getFoodlogsByDate(date: date1, foodlogs: [f])            
+        })
+        
+        return foodlog1
+        
+    }
+        
+    
     
     func updatePassword(username: String, password: String) {
         let place = DataStore.shared.usernameIndex(username: username)
@@ -236,8 +261,9 @@ class DataStore {
                         let carb = fl["carb"]
                         let protein = fl["protein"]
                         let fat = fl["fat"]
+                        let selectDate = fl["selectDate"]
                     
-                        let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!,  fat: fat!, protein: protein!)
+                        let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!,  fat: fat!, protein: protein!, selectDate: selectDate!)
                     
                         self.foodlogs.append(newfoodlog)
                     }
@@ -308,7 +334,8 @@ class DataStore {
             "foodname":foodlog.foodname,
             "carb": foodlog.carb,
             "fat": foodlog.fat,
-            "protein":foodlog.protein
+            "protein":foodlog.protein,
+            "selectDate":foodlog.selectDate
         ]
         self.ref.child("foodlog").child(foodlog.uid).child(foodlog.date).setValue(foodlogRecord)
         
