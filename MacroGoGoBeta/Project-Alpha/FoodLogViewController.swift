@@ -58,14 +58,17 @@ extension FoodLogViewController: JTAppleCalendarViewDataSource{
     
     
     func configureCalendar(_ calender: JTAppleCalendarView) -> ConfigurationParameters {
-        
+        let currentDate = Date()
         format.dateFormat = "yyyy MM dd"
         format.timeZone=Calendar.current.timeZone
         format.locale = Calendar.current.locale
+
         
-        let startDate = format.date(from: "2017 01 01")
+        
+        
+        
         let endDate = format.date(from: "2030 12 31")
-        let parameters = ConfigurationParameters(startDate: startDate!, endDate: endDate!)
+        let parameters = ConfigurationParameters(startDate: currentDate, endDate: endDate!)
         return parameters
     }
     
@@ -112,7 +115,7 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
         }
         let ss = month.text! + "-" + day2 + "-" + year.text! 
         DataStore.shared.updateDate(s: ss)
-        DataStore.shared.checkDate()
+        
     }
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validcell = cell as? CustomCell else { return }

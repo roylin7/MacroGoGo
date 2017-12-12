@@ -17,7 +17,7 @@ class DataStore {
     
     private var ref: DatabaseReference
     private var people: [Person]!
-    private var foodlogs:[FoodLog]!
+    public var foodlogs:[FoodLog]!
     private var Elog:[ExerciseLog]!
     
     private init() {
@@ -47,7 +47,9 @@ class DataStore {
     }
     
     func getFoodlog(index: Int) -> FoodLog{
+        print(index)
         return foodlogs[index]
+        
     }
     
     // get list of users by name
@@ -111,7 +113,7 @@ class DataStore {
     
     func getDateList(foologs: [FoodLog]) -> [String] {
         var dateList = [String]()
-        let num: Int = DataStore.shared.Fcount()
+        let num: Int = foodlogs.count
         var i = 0
         while i < num {
             let foodlog = DataStore.shared.getFoodlog(index: i)
@@ -134,13 +136,16 @@ class DataStore {
     }
     
     func getFoodlogsByDate(date:String,foodlogs:[FoodLog]) -> [FoodLog]{
+        print (date)
         var foodlogbydate = [FoodLog]()
         let num: Int = foodlogs.count
         var i = 0
         print (num)
         while i < num{
             let foodlog = foodlogs[i]
+            print(date)
             let s = getDate(foodlog: foodlog)
+            print (s)
             if s == date {
                 foodlogbydate.append(foodlog)
                 i += 1
@@ -157,27 +162,38 @@ class DataStore {
     }
     func updateDate(s:String){
         let uid = Auth.auth().currentUser?.uid
-        
-        let f = getFoodlog(index: foodlogs.count-1)
-        if foodlogs.count > 0 {
-            self.ref.child("foodlog").child(uid!).child(f.date).updateChildValues(["selectDate":s])
+        var i = 0
+        let f = DataStore.shared.foodlogs
+        while i < f!.count{
+            let fl = f![i]
+            print (f!.count)
+            i += 1
+            self.ref.child("foodlog").child(uid!).child(fl.date).updateChildValues(["selectDate":s])
+            fl.selectDate = s    
         }
+        
+        
     }
     func checkDate()-> [FoodLog]{
-        let uid = Auth.auth().currentUser?.uid
-        let f = getFoodlog(index: foodlogs.count-1)
-        var foodlog1 = [FoodLog]()
-        print(f.date)
-        print (f)
-        _ = ref.child("foodlog").child(uid!).child(f.date).child("selectDate").observeSingleEvent(of: .value, with: { (snapshot) in
-                let date1 = snapshot.value as! String
-                print(date1)
-                foodlog1 = DataStore.shared.getFoodlogsByDate(date: date1, foodlogs: [f])            
-        })
         
-        return foodlog1
+       
+        let f = DataStore.shared.foodlogs
+        var i = 0
+        var foodlog1 = [FoodLog]()
+        var foodlog2 = [FoodLog]()
+        while i < f!.count{
+            let fl = f![i]
+            print (f!.count)
+            print(String(i) + "i")
+            i += 1
+            foodlog1 = DataStore.shared.getFoodlogsByDate(date: fl.selectDate, foodlogs: [fl])
+            foodlog2 += foodlog1
+        }
+        
+        return foodlog2
         
     }
+    
         
     
     
@@ -199,7 +215,6 @@ class DataStore {
         let date = foodlog.date
         let index =  date.index(date.startIndex, offsetBy: 10)
         let substring = date[..<index]
-        print (substring)
         return String(substring)
     }
     
@@ -338,8 +353,8 @@ class DataStore {
             "selectDate":foodlog.selectDate
         ]
         self.ref.child("foodlog").child(foodlog.uid).child(foodlog.date).setValue(foodlogRecord)
-        
-        
+        foodlogs.append(foodlog)
+        print( foodlogs.count)
     }
     func setSetting(info: InfoSetting){
         let settingRecord = [
