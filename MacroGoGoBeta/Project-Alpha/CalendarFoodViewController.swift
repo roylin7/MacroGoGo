@@ -5,11 +5,10 @@
 //  Created by Sheryar Ali on 12/7/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
-
 import UIKit
 
 class CalendarFoodViewController: UIViewController {
-
+    
     var flogs: FoodLog!
     
     @IBOutlet weak var carboyhdrates: UILabel!
@@ -35,5 +34,5 @@ class CalendarFoodViewController: UIViewController {
         fat.text = flogs.fat
         carboyhdrates.text = flogs.carb
     }
-
+    
 }

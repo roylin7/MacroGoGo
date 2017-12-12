@@ -5,7 +5,6 @@
 //  Created by Roy Lin on 11/18/17.
 //  Copyright © 2017 Roy Lin. All rights reserved.
 //
-
 import Foundation
 
 class FoodLog{

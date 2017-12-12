@@ -52,7 +52,7 @@ class ExerciseTableViewController: UITableViewController {
                 // If you don't do this, the back button text is this screens title text.
                 // If this screen didn't have any nav bar title text, the back button text would be 'Back', by default.
                 let backItem = UIBarButtonItem()
-                backItem.title = "ELOG LIST"
+                backItem.title = "Cached Exercise Logs"
                 navigationItem.backBarButtonItem = backItem
             }
         }

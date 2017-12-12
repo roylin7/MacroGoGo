@@ -42,6 +42,7 @@ class DataStore {
     func getPerson(index: Int) -> Person {
         return people[index]
     }
+    
     func getElog(index: Int) -> ExerciseLog {
         return Elog[index]
     }
@@ -64,6 +65,7 @@ class DataStore {
         }
         return usernamelist
     }
+    
     func usernameIndex(username: String) -> Int{
         var usernamelist = DataStore.shared.getUserNameList()
         var i = 0
@@ -78,12 +80,7 @@ class DataStore {
                 i += 1
             }
         }
-        
         return a
-        
-        
-        
-        
     }
     
     func usernameExist(username: String) -> Bool{
@@ -96,7 +93,6 @@ class DataStore {
         else{
             return false
         }
-        
     }
     
     func getUsername(username: String) -> String{
@@ -126,9 +122,7 @@ class DataStore {
             }
             
         }
-        print (dateList)
         return dateList
-        
     }
     
     func getDateListCount() -> Int{
@@ -160,6 +154,7 @@ class DataStore {
     func getFoodlogs() -> [FoodLog]{
         return foodlogs
     }
+    
     func updateDate(s:String){
         let uid = Auth.auth().currentUser?.uid
         var i = 0
@@ -169,14 +164,12 @@ class DataStore {
             print (f!.count)
             i += 1
             self.ref.child("foodlog").child(uid!).child(fl.date).updateChildValues(["selectDate":s])
-            fl.selectDate = s    
+            fl.selectDate = s
         }
-        
-        
     }
+    
     func checkDate()-> [FoodLog]{
         
-       
         let f = DataStore.shared.foodlogs
         var i = 0
         var foodlog1 = [FoodLog]()
@@ -189,13 +182,8 @@ class DataStore {
             foodlog1 = DataStore.shared.getFoodlogsByDate(date: fl.selectDate, foodlogs: [fl])
             foodlog2 += foodlog1
         }
-        
         return foodlog2
-        
     }
-    
-        
-    
     
     func updatePassword(username: String, password: String) {
         let place = DataStore.shared.usernameIndex(username: username)
@@ -210,14 +198,12 @@ class DataStore {
         }
     }
     
-    
     func getDate(foodlog: FoodLog) -> String{
         let date = foodlog.date
         let index =  date.index(date.startIndex, offsetBy: 10)
         let substring = date[..<index]
         return String(substring)
     }
-    
     
     func getPassword(username: String) -> String {
         
@@ -258,40 +244,38 @@ class DataStore {
     }
     
     func loadFoodlog(){
-            foodlogs = [FoodLog]()
-            let uid = Auth.auth().currentUser?.uid
-            if uid == nil {
-                return
-            }
-            ref.child("foodlog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Get the top-level dictionary.
-                let value = snapshot.value as? NSDictionary
+        foodlogs = [FoodLog]()
+        let uid = Auth.auth().currentUser?.uid
+        if uid == nil {
+            return
+        }
+        ref.child("foodlog").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get the top-level dictionary.
+            let value = snapshot.value as? NSDictionary
             
-                if let foodlog = value {
-                    for f in foodlog{
-                        let fl = f.value as! [String:String]
-                        let uid = fl["uid"]
-                        let date = fl["date"]
-                        let foodname = fl["foodname"]
-                        let carb = fl["carb"]
-                        let protein = fl["protein"]
-                        let fat = fl["fat"]
-                        let selectDate = fl["selectDate"]
+            if let foodlog = value {
+                for f in foodlog{
+                    let fl = f.value as! [String:String]
+                    let uid = fl["uid"]
+                    let date = fl["date"]
+                    let foodname = fl["foodname"]
+                    let carb = fl["carb"]
+                    let protein = fl["protein"]
+                    let fat = fl["fat"]
+                    let selectDate = fl["selectDate"]
                     
-                        let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!,  fat: fat!, protein: protein!, selectDate: selectDate!)
+                    let newfoodlog = FoodLog(uid: uid!, date: date!, foodname: foodname!, carb: carb!,  fat: fat!, protein: protein!, selectDate: selectDate!)
                     
-                        self.foodlogs.append(newfoodlog)
-                    }
+                    self.foodlogs.append(newfoodlog)
                 }
             }
-        
+        }
+            
         ){(error) in
             print(error.localizedDescription)
         }
-        
-       
-        
     }
+    
     func loadElog(){
         Elog = [ExerciseLog]()
         let uid = Auth.auth().currentUser?.uid
@@ -341,7 +325,6 @@ class DataStore {
         people.append(person)
     }
     
-    
     func addFoodlog(foodlog : FoodLog){
         let foodlogRecord = [
             "uid": foodlog.uid,
@@ -356,6 +339,7 @@ class DataStore {
         foodlogs.append(foodlog)
         print( foodlogs.count)
     }
+    
     func setSetting(info: InfoSetting){
         let settingRecord = [
             "uid" : info.uid,
@@ -378,14 +362,4 @@ class DataStore {
         self.ref.child("elog").child(elog.uid).child(elog.logname).setValue(elogRecord)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
-

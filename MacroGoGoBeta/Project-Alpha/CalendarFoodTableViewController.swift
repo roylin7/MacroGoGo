@@ -15,7 +15,7 @@ class CalendarFoodTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         
     }
     
@@ -48,7 +48,7 @@ class CalendarFoodTableViewController: UITableViewController {
             cell.textLabel?.text = String(s[indexPath.row].foodname)
             return cell
         }
-       
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flog" {
@@ -57,7 +57,7 @@ class CalendarFoodTableViewController: UITableViewController {
                 let vc = segue.destination as! CalendarFoodViewController
                 // Pass the selected data model object to the destination view controller.
                 
-                 var s = DataStore.shared.checkDate()
+                var s = DataStore.shared.checkDate()
                 vc.flogs = s[indexPath.row]
                 
                 
@@ -65,13 +65,9 @@ class CalendarFoodTableViewController: UITableViewController {
                 // If you don't do this, the back button text is this screens title text.
                 // If this screen didn't have any nav bar title text, the back button text would be 'Back', by default.
                 let backItem = UIBarButtonItem()
-                backItem.title = "FLOG LIST"
+                backItem.title = "Cached Food Logs"
                 navigationItem.backBarButtonItem = backItem
             }
         }
     }
-    
-    
-    
-    
 }

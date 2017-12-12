@@ -42,10 +42,4 @@ class DateCellTableViewController: UITableViewController {
         
         return cell
     }
-    
-    
-    
-    
-    
 }
-

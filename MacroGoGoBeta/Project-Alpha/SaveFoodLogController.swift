@@ -66,8 +66,4 @@ class SaveFoodLogController: UIViewController {
         }
         
     }
-    
-    
-    
-    
 }

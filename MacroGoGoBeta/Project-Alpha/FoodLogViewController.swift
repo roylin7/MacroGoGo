@@ -62,7 +62,7 @@ extension FoodLogViewController: JTAppleCalendarViewDataSource{
         format.dateFormat = "yyyy MM dd"
         format.timeZone=Calendar.current.timeZone
         format.locale = Calendar.current.locale
-
+        
         
         
         
@@ -105,7 +105,7 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
         print (d)
         
         var day = Int(validcell2.dateLabel.text!)!
-      
+        
         var day2 = ""
         if day < 10{
             day2 = "0" + String(describing: day)
@@ -113,7 +113,7 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
         else{
             day2 = String(describing: day)
         }
-        let ss = month.text! + "-" + day2 + "-" + year.text! 
+        let ss = month.text! + "-" + day2 + "-" + year.text!
         DataStore.shared.updateDate(s: ss)
         
     }
@@ -127,30 +127,30 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        
         if segue.identifier == "haha" {
-             /*///
-            // Get the table view row that was tapped.
-            let vc = segue.destination as! CalendarFoodTableViewController
-            // Pass the selected data model object to the destination view controller.
-            let num = DataStore.shared.Fcount()
-            var i = 0
-            var list = [FoodLog]()
-            while i < num {
-                var log = DataStore.shared.getFoodlog(index: i)
-                list.append(log)
-                i += 1
-            }
-            let month = self.month.text!
-            let year = self.year.text!
-            let day1 = day
-            
-            let date = year+"-" + month + "-" + day1
-            print(date)
-            let newlist = DataStore.shared.getFoodlogsByDate(date: date, foodlogs: list)
-            vc.newlist1 = newlist
-            
-            *///
+            /*///
+             // Get the table view row that was tapped.
+             let vc = segue.destination as! CalendarFoodTableViewController
+             // Pass the selected data model object to the destination view controller.
+             let num = DataStore.shared.Fcount()
+             var i = 0
+             var list = [FoodLog]()
+             while i < num {
+             var log = DataStore.shared.getFoodlog(index: i)
+             list.append(log)
+             i += 1
+             }
+             let month = self.month.text!
+             let year = self.year.text!
+             let day1 = day
+             
+             let date = year+"-" + month + "-" + day1
+             print(date)
+             let newlist = DataStore.shared.getFoodlogsByDate(date: date, foodlogs: list)
+             vc.newlist1 = newlist
+             
+             *///
             // Set the navigation bar back button text.
             // If you don't do this, the back button text is this screens title text.
             // If this screen didn't have any nav bar title text, the back button text would be 'Back', by default.
@@ -158,7 +158,5 @@ extension FoodLogViewController: JTAppleCalendarViewDelegate {
             backItem.title = "Calendar"
             navigationItem.backBarButtonItem = backItem
         }
- 
     }
- 
 }
